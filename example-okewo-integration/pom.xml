@@ -24,12 +24,6 @@
         </dependency>
 
         <dependency>
-            <groupId>com.squareup.okhttp3</groupId>
-            <artifactId>okhttp</artifactId>
-            <version>${okhttp.version}</version>
-        </dependency>
-
-        <dependency>
             <groupId>io.muenchendigital.digiwf</groupId>
             <artifactId>digiwf-okewo-integration-starter</artifactId>
             <version>${project.version}</version>
@@ -40,12 +34,6 @@
             <groupId>net.logstash.logback</groupId>
             <artifactId>logstash-logback-encoder</artifactId>
             <version>${logstash.encoder}</version>
-        </dependency>
-
-        <!-- database -->
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
         </dependency>
 
         <!-- test -->
@@ -81,7 +69,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-
 
 </project>
