@@ -31,6 +31,7 @@
     <modules>
         <module>digiwf-okewo-integration</module>
         <module>digiwf-okewo-integration-starter</module>
+        <module>digiwf-okewo-integration-service</module>
         <module>example-okewo-integration</module>
     </modules>
 

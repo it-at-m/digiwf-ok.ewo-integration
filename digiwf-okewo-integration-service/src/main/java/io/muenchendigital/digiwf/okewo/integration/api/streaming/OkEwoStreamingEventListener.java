@@ -1,4 +1,4 @@
-package io.muenchendigital.digiwf.okewo.integration.api;
+package io.muenchendigital.digiwf.okewo.integration.api.streaming;
 
 import io.muenchendigital.digiwf.okewo.integration.api.dto.OkEwoErrorDto;
 import io.muenchendigital.digiwf.okewo.integration.gen.model.SuchePersonAnfrage;

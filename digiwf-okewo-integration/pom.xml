@@ -14,7 +14,6 @@
     </parent>
 
     <properties>
-        <digiwf.spring.cloudstream.utils.version>0.0.1</digiwf.spring.cloudstream.utils.version>
         <springdoc.openapi.version>1.6.2</springdoc.openapi.version>
         <apache.commons.version>4.4</apache.commons.version>
         <hamcrest.version>1.3</hamcrest.version>
@@ -30,17 +29,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-logging</artifactId>
-        </dependency>
-
-        <!-- Cloud Stream -->
-        <dependency>
-            <groupId>io.muenchendigital.digiwf</groupId>
-            <artifactId>digiwf-spring-cloudstream-utils-starter</artifactId>
-            <version>${digiwf.spring.cloudstream.utils.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-stream-binder-kafka</artifactId>
         </dependency>
 
         <!-- openApi -->
