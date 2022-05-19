@@ -43,13 +43,6 @@
             <artifactId>spring-cloud-stream-binder-kafka</artifactId>
         </dependency>
 
-        <!-- openApi -->
-        <dependency>
-            <groupId>org.springdoc</groupId>
-            <artifactId>springdoc-openapi-ui</artifactId>
-            <version>${springdoc.openapi.version}</version>
-        </dependency>
-
         <dependency>
             <groupId>io.muenchendigital.digiwf</groupId>
             <artifactId>digiwf-okewo-integration-starter</artifactId>
