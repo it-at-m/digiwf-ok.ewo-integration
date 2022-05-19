@@ -69,7 +69,7 @@ public class ApiClient {
     
     private HttpHeaders defaultHeaders = new HttpHeaders();
     
-    private String basePath = "http://personen-v2-ewo-eai.apps.muenchen.de/rest";
+    private String basePath = "http://localhost:8080/rest";
 
     private RestTemplate restTemplate;
 

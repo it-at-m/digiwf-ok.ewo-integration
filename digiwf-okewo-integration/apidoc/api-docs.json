@@ -4,7 +4,7 @@
     "version": "Schema 2.0.2 Service 2.2.0",
     "title": "Camel REST API"
   },
-  "host": "personen-v2-ewo-eai.apps.muenchen.de",
+  "host": "localhost:8080",
   "basePath": "/rest",
   "tags": [
     {
@@ -290,7 +290,7 @@
       },
       "xml": {
         "name": "Person",
-        "namespace": "http://person.model.fachlich.api.ewo.eai.muenchen.de/v2"
+        "namespace": "http://localhost:8080/v2"
       }
     },
     "AnschriftType": {
@@ -406,7 +406,7 @@
       },
       "xml": {
         "name": "suche.person.anfrage",
-        "namespace": "http://person.model.fachlich.api.ewo.eai.muenchen.de/v2"
+        "namespace": "http://localhost:8080/v2"
       }
     },
     "BenutzerType": {
@@ -482,7 +482,7 @@
           "type": "array",
           "xml": {
             "name": "Person",
-            "namespace": "http://person.model.fachlich.api.ewo.eai.muenchen.de/v2"
+            "namespace": "http://localhost:8080/v2"
           },
           "items": {
             "xml": {
@@ -494,7 +494,7 @@
       },
       "xml": {
         "name": "suche.person.antwort",
-        "namespace": "http://person.model.fachlich.api.ewo.eai.muenchen.de/v2"
+        "namespace": "http://localhost:8080/v2"
       }
     },
     "AktuelleWohnungType": {
@@ -799,7 +799,7 @@
       },
       "xml": {
         "name": "PersonErweitert",
-        "namespace": "http://person.model.fachlich.api.ewo.eai.muenchen.de/v2"
+        "namespace": "http://localhost:8080/v2"
       }
     },
     "InaktuelleWohnungType": {
@@ -1242,7 +1242,7 @@
       },
       "xml": {
         "name": "suche.personerweitert.anfrage",
-        "namespace": "http://person.model.fachlich.api.ewo.eai.muenchen.de/v2"
+        "namespace": "http://localhost:8080/v2"
       }
     },
     "PersonenSuchkriterienErweitertType": {
@@ -1310,7 +1310,7 @@
           "type": "array",
           "xml": {
             "name": "PersonErweitert",
-            "namespace": "http://person.model.fachlich.api.ewo.eai.muenchen.de/v2"
+            "namespace": "http://localhost:8080/v2"
           },
           "items": {
             "xml": {
@@ -1322,7 +1322,7 @@
       },
       "xml": {
         "name": "suche.personerweitert.antwort",
-        "namespace": "http://person.model.fachlich.api.ewo.eai.muenchen.de/v2"
+        "namespace": "http://localhost:8080/v2"
       }
     }
   }
