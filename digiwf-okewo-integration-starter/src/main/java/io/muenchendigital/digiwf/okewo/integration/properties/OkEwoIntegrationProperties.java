@@ -16,4 +16,10 @@ public class OkEwoIntegrationProperties {
     @NotBlank
     private String url;
 
+    @NotBlank
+    private String username;
+
+    @NotBlank
+    private String password;
+
 }
