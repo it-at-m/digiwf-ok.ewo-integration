@@ -17,6 +17,7 @@
         <java.version>11</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.boot.version>2.6.7</spring.boot.version>
+        <spring.cloud.version>2021.0.2</spring.cloud.version>
         <camel.version>3.16.0</camel.version>
         <okhttp.version>4.8.1</okhttp.version>
         <minio.version>8.3.9</minio.version>
@@ -44,7 +45,15 @@
                 <scope>import</scope>
             </dependency>
             <dependency>
-                <!-- Camel BOM -->
+                <!-- Import dependency management from Spring Cloud -->
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <!-- Import dependency management from Camel -->
                 <groupId>org.apache.camel.springboot</groupId>
                 <artifactId>camel-spring-boot-dependencies</artifactId>
                 <version>${camel.version}</version>
