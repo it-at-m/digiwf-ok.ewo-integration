@@ -1,8 +1,8 @@
 package io.muenchendigital.digiwf.okewo.integration.repository;
 
-import io.muenchendigital.digiwf.okewo.integration.exception.DocumentStorageClientErrorException;
-import io.muenchendigital.digiwf.okewo.integration.exception.DocumentStorageException;
-import io.muenchendigital.digiwf.okewo.integration.exception.DocumentStorageServerErrorException;
+import io.muenchendigital.digiwf.okewo.integration.exception.OkEwoIntegrationClientErrorException;
+import io.muenchendigital.digiwf.okewo.integration.exception.OkEwoIntegrationException;
+import io.muenchendigital.digiwf.okewo.integration.exception.OkEwoIntegrationServerErrorException;
 import io.muenchendigital.digiwf.okewo.integration.gen.api.PersonApi;
 import io.muenchendigital.digiwf.okewo.integration.gen.model.Person;
 import io.muenchendigital.digiwf.okewo.integration.gen.model.SuchePersonAnfrage;
@@ -26,25 +26,25 @@ public class OkEwoPersonRepository {
      *
      * @param om as Ordnungsmerkmal which identifies a {@link Person}.
      * @return the {@link Person} identified by Ordnungsmerkmal.
-     * @throws DocumentStorageClientErrorException if the problem is with the client.
-     * @throws DocumentStorageServerErrorException if the problem is with OK.EWO.
-     * @throws DocumentStorageException            if the problem cannot be assigned directly to OK.EWO or client.
+     * @throws OkEwoIntegrationClientErrorException if the problem is with the client.
+     * @throws OkEwoIntegrationServerErrorException if the problem is with OK.EWO.
+     * @throws OkEwoIntegrationException            if the problem cannot be assigned directly to OK.EWO or client.
      */
-    public Person getPerson(final String om) throws DocumentStorageClientErrorException, DocumentStorageServerErrorException, DocumentStorageException {
+    public Person getPerson(final String om) throws OkEwoIntegrationClientErrorException, OkEwoIntegrationServerErrorException, OkEwoIntegrationException {
         try {
             return this.personApi.deMuenchenEaiEwoRouteROUTEPROCESSGETPERSON(om);
         } catch (final HttpClientErrorException exception) {
             final String message = String.format("The request to get a person failed with %s.", exception.getStatusCode());
             log.error(message);
-            throw new DocumentStorageClientErrorException(message, exception);
+            throw new OkEwoIntegrationClientErrorException(message, exception);
         } catch (final HttpServerErrorException exception) {
             final String message = String.format("The request to get a person failed with %s.", exception.getStatusCode());
             log.error(message);
-            throw new DocumentStorageServerErrorException(message, exception);
+            throw new OkEwoIntegrationServerErrorException(message, exception);
         } catch (final RestClientException exception) {
             final String message = String.format("The request to get a person failed.");
             log.error(message);
-            throw new DocumentStorageException(message, exception);
+            throw new OkEwoIntegrationException(message, exception);
         }
     }
 
@@ -53,25 +53,25 @@ public class OkEwoPersonRepository {
      *
      * @param suchePersonAnfrage to identify {@link Person}s.
      * @return the {@link SuchePersonAntwort} with the identified {@link Person}s.
-     * @throws DocumentStorageClientErrorException if the problem is with the client.
-     * @throws DocumentStorageServerErrorException if the problem is with OK.EWO.
-     * @throws DocumentStorageException            if the problem cannot be assigned directly to OK.EWO or client.
+     * @throws OkEwoIntegrationClientErrorException if the problem is with the client.
+     * @throws OkEwoIntegrationServerErrorException if the problem is with OK.EWO.
+     * @throws OkEwoIntegrationException            if the problem cannot be assigned directly to OK.EWO or client.
      */
-    public SuchePersonAntwort searchPerson(final SuchePersonAnfrage suchePersonAnfrage) throws DocumentStorageClientErrorException, DocumentStorageServerErrorException, DocumentStorageException {
+    public SuchePersonAntwort searchPerson(final SuchePersonAnfrage suchePersonAnfrage) throws OkEwoIntegrationClientErrorException, OkEwoIntegrationServerErrorException, OkEwoIntegrationException {
         try {
             return this.personApi.deMuenchenEaiEwoRouteROUTEPROCESSSEARCHPERSON(suchePersonAnfrage);
         } catch (final HttpClientErrorException exception) {
             final String message = String.format("The request to search a person failed with %s.", exception.getStatusCode());
             log.error(message);
-            throw new DocumentStorageClientErrorException(message, exception);
+            throw new OkEwoIntegrationClientErrorException(message, exception);
         } catch (final HttpServerErrorException exception) {
             final String message = String.format("The request to search a person failed with %s.", exception.getStatusCode());
             log.error(message);
-            throw new DocumentStorageServerErrorException(message, exception);
+            throw new OkEwoIntegrationServerErrorException(message, exception);
         } catch (final RestClientException exception) {
             final String message = String.format("The request to search a person failed.");
             log.error(message);
-            throw new DocumentStorageException(message, exception);
+            throw new OkEwoIntegrationException(message, exception);
         }
     }
 

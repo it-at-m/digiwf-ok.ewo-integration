@@ -1,8 +1,8 @@
 package io.muenchendigital.digiwf.okewo.integration.repository;
 
-import io.muenchendigital.digiwf.okewo.integration.exception.DocumentStorageClientErrorException;
-import io.muenchendigital.digiwf.okewo.integration.exception.DocumentStorageException;
-import io.muenchendigital.digiwf.okewo.integration.exception.DocumentStorageServerErrorException;
+import io.muenchendigital.digiwf.okewo.integration.exception.OkEwoIntegrationClientErrorException;
+import io.muenchendigital.digiwf.okewo.integration.exception.OkEwoIntegrationException;
+import io.muenchendigital.digiwf.okewo.integration.exception.OkEwoIntegrationServerErrorException;
 import io.muenchendigital.digiwf.okewo.integration.gen.api.PersonErweitertApi;
 import io.muenchendigital.digiwf.okewo.integration.gen.model.PersonErweitert;
 import io.muenchendigital.digiwf.okewo.integration.gen.model.SuchePersonerweitertAnfrage;
@@ -26,25 +26,25 @@ public class OkEwoPersonErweitertRepository {
      *
      * @param om as Ordnungsmerkmal which identifies a {@link PersonErweitert}.
      * @return the {@link PersonErweitert} identified by Ordnungsmerkmal.
-     * @throws DocumentStorageClientErrorException if the problem is with the client.
-     * @throws DocumentStorageServerErrorException if the problem is with OK.EWO.
-     * @throws DocumentStorageException            if the problem cannot be assigned directly to OK.EWO or client.
+     * @throws OkEwoIntegrationClientErrorException if the problem is with the client.
+     * @throws OkEwoIntegrationServerErrorException if the problem is with OK.EWO.
+     * @throws OkEwoIntegrationException            if the problem cannot be assigned directly to OK.EWO or client.
      */
-    public PersonErweitert getPerson(final String om) throws DocumentStorageClientErrorException, DocumentStorageServerErrorException, DocumentStorageException {
+    public PersonErweitert getPerson(final String om) throws OkEwoIntegrationClientErrorException, OkEwoIntegrationServerErrorException, OkEwoIntegrationException {
         try {
             return this.personErweitertApi.deMuenchenEaiEwoRouteROUTEPROCESSGETPERSONERWEITERT(om);
         } catch (final HttpClientErrorException exception) {
             final String message = String.format("The request to get a person failed with %s.", exception.getStatusCode());
             log.error(message);
-            throw new DocumentStorageClientErrorException(message, exception);
+            throw new OkEwoIntegrationClientErrorException(message, exception);
         } catch (final HttpServerErrorException exception) {
             final String message = String.format("The request to get a person failed with %s.", exception.getStatusCode());
             log.error(message);
-            throw new DocumentStorageServerErrorException(message, exception);
+            throw new OkEwoIntegrationServerErrorException(message, exception);
         } catch (final RestClientException exception) {
             final String message = String.format("The request to get a person failed.");
             log.error(message);
-            throw new DocumentStorageException(message, exception);
+            throw new OkEwoIntegrationException(message, exception);
         }
     }
 
@@ -53,25 +53,25 @@ public class OkEwoPersonErweitertRepository {
      *
      * @param suchePersonerweitertAnfrage to identify {@link PersonErweitert}s.
      * @return the {@link SuchePersonerweitertAntwort} with the identified {@link PersonErweitert}s.
-     * @throws DocumentStorageClientErrorException if the problem is with the client.
-     * @throws DocumentStorageServerErrorException if the problem is with OK.EWO.
-     * @throws DocumentStorageException            if the problem cannot be assigned directly to OK.EWO or client.
+     * @throws OkEwoIntegrationClientErrorException if the problem is with the client.
+     * @throws OkEwoIntegrationServerErrorException if the problem is with OK.EWO.
+     * @throws OkEwoIntegrationException            if the problem cannot be assigned directly to OK.EWO or client.
      */
-    public SuchePersonerweitertAntwort searchPerson(final SuchePersonerweitertAnfrage suchePersonerweitertAnfrage) throws DocumentStorageClientErrorException, DocumentStorageServerErrorException, DocumentStorageException {
+    public SuchePersonerweitertAntwort searchPerson(final SuchePersonerweitertAnfrage suchePersonerweitertAnfrage) throws OkEwoIntegrationClientErrorException, OkEwoIntegrationServerErrorException, OkEwoIntegrationException {
         try {
             return this.personErweitertApi.deMuenchenEaiEwoRouteROUTEPROCESSSEARCHPERSONERWEITERT(suchePersonerweitertAnfrage);
         } catch (final HttpClientErrorException exception) {
             final String message = String.format("The request to search a person failed with %s.", exception.getStatusCode());
             log.error(message);
-            throw new DocumentStorageClientErrorException(message, exception);
+            throw new OkEwoIntegrationClientErrorException(message, exception);
         } catch (final HttpServerErrorException exception) {
             final String message = String.format("The request to search a person failed with %s.", exception.getStatusCode());
             log.error(message);
-            throw new DocumentStorageServerErrorException(message, exception);
+            throw new OkEwoIntegrationServerErrorException(message, exception);
         } catch (final RestClientException exception) {
             final String message = String.format("The request to search a person failed.");
             log.error(message);
-            throw new DocumentStorageException(message, exception);
+            throw new OkEwoIntegrationException(message, exception);
         }
     }
 
