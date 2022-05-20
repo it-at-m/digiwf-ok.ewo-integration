@@ -21,6 +21,15 @@ public class OkEwoPersonErweitertRepository {
 
     private final PersonErweitertApi personErweitertApi;
 
+    /**
+     * Gets a {@link PersonErweitert} by Ordnungsmerkmal.
+     *
+     * @param om as Ordnungsmerkmal which identifies a {@link PersonErweitert}.
+     * @return the {@link PersonErweitert} identified by Ordnungsmerkmal.
+     * @throws DocumentStorageClientErrorException if the problem is with the client.
+     * @throws DocumentStorageServerErrorException if the problem is with OK.EWO.
+     * @throws DocumentStorageException            if the problem cannot be assigned directly to OK.EWO or client.
+     */
     public PersonErweitert getPerson(final String om) throws DocumentStorageClientErrorException, DocumentStorageServerErrorException, DocumentStorageException {
         try {
             return this.personErweitertApi.deMuenchenEaiEwoRouteROUTEPROCESSGETPERSONERWEITERT(om);
@@ -39,9 +48,18 @@ public class OkEwoPersonErweitertRepository {
         }
     }
 
-    public SuchePersonerweitertAntwort searchPerson(final SuchePersonerweitertAnfrage suchePersonAnfrage) throws DocumentStorageClientErrorException, DocumentStorageServerErrorException, DocumentStorageException {
+    /**
+     * Searches for {@link PersonErweitert}s identified by {@link SuchePersonerweitertAnfrage}.
+     *
+     * @param suchePersonerweitertAnfrage to identify {@link PersonErweitert}s.
+     * @return the {@link SuchePersonerweitertAntwort} with the identified {@link PersonErweitert}s.
+     * @throws DocumentStorageClientErrorException if the problem is with the client.
+     * @throws DocumentStorageServerErrorException if the problem is with OK.EWO.
+     * @throws DocumentStorageException            if the problem cannot be assigned directly to OK.EWO or client.
+     */
+    public SuchePersonerweitertAntwort searchPerson(final SuchePersonerweitertAnfrage suchePersonerweitertAnfrage) throws DocumentStorageClientErrorException, DocumentStorageServerErrorException, DocumentStorageException {
         try {
-            return this.personErweitertApi.deMuenchenEaiEwoRouteROUTEPROCESSSEARCHPERSONERWEITERT(suchePersonAnfrage);
+            return this.personErweitertApi.deMuenchenEaiEwoRouteROUTEPROCESSSEARCHPERSONERWEITERT(suchePersonerweitertAnfrage);
         } catch (final HttpClientErrorException exception) {
             final String message = String.format("The request to search a person failed with %s.", exception.getStatusCode());
             log.error(message);

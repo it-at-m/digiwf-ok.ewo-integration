@@ -21,6 +21,15 @@ public class OkEwoPersonRepository {
 
     private final PersonApi personApi;
 
+    /**
+     * Gets a {@link Person} by Ordnungsmerkmal.
+     *
+     * @param om as Ordnungsmerkmal which identifies a {@link Person}.
+     * @return the {@link Person} identified by Ordnungsmerkmal.
+     * @throws DocumentStorageClientErrorException if the problem is with the client.
+     * @throws DocumentStorageServerErrorException if the problem is with OK.EWO.
+     * @throws DocumentStorageException            if the problem cannot be assigned directly to OK.EWO or client.
+     */
     public Person getPerson(final String om) throws DocumentStorageClientErrorException, DocumentStorageServerErrorException, DocumentStorageException {
         try {
             return this.personApi.deMuenchenEaiEwoRouteROUTEPROCESSGETPERSON(om);
@@ -39,6 +48,15 @@ public class OkEwoPersonRepository {
         }
     }
 
+    /**
+     * Searches for {@link Person}s identified by {@link SuchePersonAnfrage}.
+     *
+     * @param suchePersonAnfrage to identify {@link Person}s.
+     * @return the {@link SuchePersonAntwort} with the identified {@link Person}s.
+     * @throws DocumentStorageClientErrorException if the problem is with the client.
+     * @throws DocumentStorageServerErrorException if the problem is with OK.EWO.
+     * @throws DocumentStorageException            if the problem cannot be assigned directly to OK.EWO or client.
+     */
     public SuchePersonAntwort searchPerson(final SuchePersonAnfrage suchePersonAnfrage) throws DocumentStorageClientErrorException, DocumentStorageServerErrorException, DocumentStorageException {
         try {
             return this.personApi.deMuenchenEaiEwoRouteROUTEPROCESSSEARCHPERSON(suchePersonAnfrage);
