@@ -1,8 +1,12 @@
 package io.muenchendigital.digiwf.okewo.integration.api.streaming;
 
 import io.muenchendigital.digiwf.okewo.integration.api.dto.OkEwoErrorDto;
+import io.muenchendigital.digiwf.okewo.integration.gen.model.Person;
+import io.muenchendigital.digiwf.okewo.integration.gen.model.PersonErweitert;
 import io.muenchendigital.digiwf.okewo.integration.gen.model.SuchePersonAnfrage;
+import io.muenchendigital.digiwf.okewo.integration.gen.model.SuchePersonAntwort;
 import io.muenchendigital.digiwf.okewo.integration.gen.model.SuchePersonerweitertAnfrage;
+import io.muenchendigital.digiwf.okewo.integration.gen.model.SuchePersonerweitertAntwort;
 import io.muenchendigital.digiwf.okewo.integration.repository.OkEwoPersonErweitertRepository;
 import io.muenchendigital.digiwf.okewo.integration.repository.OkEwoPersonRepository;
 import io.muenchendigital.digiwf.spring.cloudstream.utils.api.streaming.service.CorrelateMessageService;
@@ -26,6 +30,13 @@ public class OkEwoStreamingEventListener {
 
     private final OkEwoPersonErweitertRepository okEwoPersonErweitertRepository;
 
+    /**
+     * The Consumer expects a String which represents a "om" for OK.EWO.
+     * <p>
+     * After successfully requesting OK.EWO a JSON representing a {@link Person} is returned.
+     * <p>
+     * In case of an error the error message is returned as a JSON representing {@link OkEwoErrorDto}.
+     */
     @Bean
     public Consumer<Message<String>> getPerson() {
         return message -> {
@@ -47,6 +58,13 @@ public class OkEwoStreamingEventListener {
         };
     }
 
+    /**
+     * The Consumer expects a {@link SuchePersonAnfrage} which represents the request dto for OK.EWO.
+     * <p>
+     * After successfully requesting OK.EWO a JSON representing a {@link SuchePersonAntwort} is returned.
+     * <p>
+     * In case of an error the error message is returned as a JSON representing {@link OkEwoErrorDto}.
+     */
     @Bean
     public Consumer<Message<SuchePersonAnfrage>> searchPerson() {
         return message -> {
@@ -68,6 +86,13 @@ public class OkEwoStreamingEventListener {
         };
     }
 
+    /**
+     * The Consumer expects a String which represents a "om" for OK.EWO.
+     * <p>
+     * After successfully requesting OK.EWO a JSON representing a {@link PersonErweitert} is returned.
+     * <p>
+     * In case of an error the error message is returned as a JSON representing {@link OkEwoErrorDto}.
+     */
     @Bean
     public Consumer<Message<String>> getPersonErweitert() {
         return message -> {
@@ -89,6 +114,13 @@ public class OkEwoStreamingEventListener {
         };
     }
 
+    /**
+     * The Consumer expects a {@link SuchePersonerweitertAnfrage} which represents the request dto for OK.EWO.
+     * <p>
+     * After successfully requesting OK.EWO a JSON representing a {@link SuchePersonerweitertAntwort} is returned.
+     * <p>
+     * In case of an error the error message is returned as a JSON representing {@link OkEwoErrorDto}.
+     */
     @Bean
     public Consumer<Message<SuchePersonerweitertAnfrage>> searchPersonErweitert() {
         return message -> {
