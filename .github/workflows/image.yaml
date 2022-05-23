@@ -20,7 +20,7 @@ jobs:
           java-version: 11
 
       - name: Build with Maven
-        run: mvn -U clean package
+        run: mvn -U clean verify
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
