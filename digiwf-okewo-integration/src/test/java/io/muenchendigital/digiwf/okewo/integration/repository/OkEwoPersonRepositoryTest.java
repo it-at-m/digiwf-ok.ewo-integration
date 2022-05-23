@@ -101,7 +101,6 @@ class OkEwoPersonRepositoryTest {
         Assertions.assertThrows(OkEwoIntegrationException.class, () -> this.okEwoPersonRepository.searchPerson(suchePersonAnfrage));
         Mockito.verify(this.personApi, Mockito.times(1)).deMuenchenEaiEwoRouteROUTEPROCESSSEARCHPERSON(suchePersonAnfrage);
         Mockito.reset(this.personApi);
-
     }
 
 }
