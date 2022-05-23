@@ -1,6 +1,6 @@
 name: Release
 
-# Run workflow on commits to the `master` branch
+# Run workflow on commits to the `main` branch
 on:
   push:
     branches:
