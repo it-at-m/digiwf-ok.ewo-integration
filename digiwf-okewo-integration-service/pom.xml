@@ -18,7 +18,6 @@
         <springdoc.openapi.version>1.6.2</springdoc.openapi.version>
         <apache.commons.version>4.4</apache.commons.version>
         <hamcrest.version>1.3</hamcrest.version>
-        <swagger.codegen.version>3.0.33</swagger.codegen.version>
     </properties>
 
     <dependencies>
