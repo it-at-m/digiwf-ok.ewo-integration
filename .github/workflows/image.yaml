@@ -8,7 +8,7 @@ on:
       - dev
 
 jobs:
-  release:
+  image:
     runs-on: ubuntu-18.04
     steps:
       - name: Check out Git repository
@@ -18,7 +18,7 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-          
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
       - name: Set up Docker Buildx
