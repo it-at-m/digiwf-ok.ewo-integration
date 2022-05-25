@@ -30,3 +30,10 @@ io.muenchendigital.digiwf.okewo:
   username: <USERNAME>
   password: <PASSWORD>
 ```
+
+5. Use the repository beans
+
+To request the OK.EWO rest api the methods of the following listed spring beans can be used.
+
+* `OkEwoPersonRepository`
+* `OkEwoPersonErweitertRepository`
