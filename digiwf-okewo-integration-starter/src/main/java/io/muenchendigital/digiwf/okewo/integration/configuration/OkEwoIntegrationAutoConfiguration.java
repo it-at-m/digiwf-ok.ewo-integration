@@ -1,6 +1,8 @@
 package io.muenchendigital.digiwf.okewo.integration.configuration;
 
 import io.muenchendigital.digiwf.okewo.integration.gen.ApiClient;
+import io.muenchendigital.digiwf.okewo.integration.gen.api.PersonApi;
+import io.muenchendigital.digiwf.okewo.integration.gen.api.PersonErweitertApi;
 import io.muenchendigital.digiwf.okewo.integration.properties.OkEwoIntegrationProperties;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -24,6 +26,8 @@ import org.springframework.web.client.RestTemplate;
                                  * to give the bean another name.
                                  */
                                 ApiClient.class,
+                                PersonApi.class,
+                                PersonErweitertApi.class
                         }
                 )
         }
@@ -33,7 +37,12 @@ public class OkEwoIntegrationAutoConfiguration {
 
     public final OkEwoIntegrationProperties okEwoIntegrationProperties;
 
-    @Bean
+    /**
+     * Provides a correct configured {@link ApiClient}.
+     *
+     * @param restTemplateBuilder to create a {@link RestTemplate}.
+     * @return a configured {@link ApiClient}.
+     */
     public ApiClient okEwoApiClient(final RestTemplateBuilder restTemplateBuilder) {
         final RestTemplate restTemplate = restTemplateBuilder
                 .basicAuthentication(
@@ -44,6 +53,30 @@ public class OkEwoIntegrationAutoConfiguration {
         final ApiClient apiClient = new ApiClient(restTemplate);
         apiClient.setBasePath(this.okEwoIntegrationProperties.getUrl());
         return apiClient;
+    }
+
+    /**
+     * Create the bean manually to use the correct configured {@link ApiClient}.
+     *
+     * @param restTemplateBuilder to create a {@link RestTemplate}.
+     * @return a bean of type PersonApi named by method name.
+     */
+    @Bean
+    public PersonApi okEwoPersonApi(final RestTemplateBuilder restTemplateBuilder) {
+        final ApiClient apiClient = this.okEwoApiClient(restTemplateBuilder);
+        return new PersonApi(apiClient);
+    }
+
+    /**
+     * Create the bean manually to use the correct configured {@link ApiClient}.
+     *
+     * @param restTemplateBuilder to create a {@link RestTemplate}.
+     * @return a bean of type PersonApi named by method name.
+     */
+    @Bean
+    public PersonErweitertApi okEwoPersonErweitertApi(final RestTemplateBuilder restTemplateBuilder) {
+        final ApiClient apiClient = this.okEwoApiClient(restTemplateBuilder);
+        return new PersonErweitertApi(apiClient);
     }
 
 }
