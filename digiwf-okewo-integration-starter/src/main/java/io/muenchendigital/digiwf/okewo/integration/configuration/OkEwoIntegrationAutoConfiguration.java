@@ -59,7 +59,7 @@ public class OkEwoIntegrationAutoConfiguration {
      * Create the bean manually to use the correct configured {@link ApiClient}.
      *
      * @param restTemplateBuilder to create a {@link RestTemplate}.
-     * @return a bean of type PersonApi named by method name.
+     * @return a bean of type {@link PersonApi} named by method name.
      */
     @Bean
     public PersonApi okEwoPersonApi(final RestTemplateBuilder restTemplateBuilder) {
@@ -71,7 +71,7 @@ public class OkEwoIntegrationAutoConfiguration {
      * Create the bean manually to use the correct configured {@link ApiClient}.
      *
      * @param restTemplateBuilder to create a {@link RestTemplate}.
-     * @return a bean of type PersonApi named by method name.
+     * @return a bean of type {@link PersonErweitertApi} named by method name.
      */
     @Bean
     public PersonErweitertApi okEwoPersonErweitertApi(final RestTemplateBuilder restTemplateBuilder) {
