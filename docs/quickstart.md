@@ -1,0 +1,32 @@
+## Getting started
+
+Below is an example of how you can install and set up your service.
+
+1. Use the spring initalizer and create a Spring Boot application with `Spring Web`
+   dependencies [https://start.spring.io](https://start.spring.io)
+2. Add the 'digiwf-email-integration-starter' dependency.
+
+With Maven:
+
+```
+   <dependency>
+        <groupId>io.muenchendigital.digiwf</groupId>
+        <artifactId>digiwf-okewo-integration-starter</artifactId>
+        <version>${version}</version>
+   </dependency>
+```
+
+With Gradle:
+
+```
+implementation group: 'io.muenchendigital.digiwf', name: 'digiwf-okewo-integration-starter', version: '${version}'
+```
+
+4. Configure your application
+
+```yaml
+io.muenchendigital.digiwf.okewo:
+  url: <URL>
+  username: <USERNAME>
+  password: <PASSWORD>
+```
