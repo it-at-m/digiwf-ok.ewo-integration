@@ -16,7 +16,6 @@
 
 <p align="center">
     This is a Spring Boot Starter library to request OK.EWO data within the DigiWF environment.
-    It can be used to request the data asynchronously through a spring cloud stream compatible event broker.
 <br /><a href="#">Report Bug</a>
     ·
     <a href="#">Request Feature</a>
@@ -56,7 +55,7 @@
 
 ## About The Project
 
-The goal of this library is enabling async OK.EWO requests.
+The goal of this library is to enable OK.EWO requests.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
