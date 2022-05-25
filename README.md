@@ -17,17 +17,12 @@
 
 <h3 align="center">DigiWF OK.EWO Integration</h3>
 
-  <p align="center">
-    This is a Spring Boot Starter library to connect to OK.EWO services
-     <!-- <br />
-   <a href="https://github.com/it-at-m/digiwf-ok.ewo-integration"><strong>Explore the docs »</strong></a> -->
-    <br />
-    <br />
-     <!-- <a href="https://github.com/it-at-m/digiwf-ok.ewo-integration">View Demo</a>
-    · -->
-    <a href="https://github.com/it-at-m/digiwf-ok.ewo-integration/issues">Report Bug</a>
+<p align="center">
+    This is a Spring Boot Starter library to request OK.EWO data within the DigiWF environment.
+    It can be used to request the data asynchronously through a spring cloud stream compatible event broker.
+<br /><a href="#">Report Bug</a>
     ·
-    <a href="https://github.com/it-at-m/digiwf-ok.ewo-integration/issues">Request Feature</a>
+    <a href="#">Request Feature</a>
   </p>
 </div>
 
@@ -59,7 +54,7 @@
 
 ## About The Project
 
-tbd
+The goal of this library is enabling async OK.EWO requests.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -68,10 +63,18 @@ tbd
 This project is built with:
 
 * [Spring Boot](https://spring.io/projects/spring-boot)
+* [Spring Cloud Stream](https://spring.io/projects/spring-cloud-stream)
+* [DigiWF Spring Cloudstream Utils](https://github.com/it-at-m/digiwf-spring-cloudstream-utils)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<!-- ROADMAP -->
 
+## Roadmap
+
+See the [open issues](#) for a full list of proposed features (and known issues).
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
