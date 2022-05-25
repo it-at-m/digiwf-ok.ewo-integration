@@ -39,9 +39,14 @@
       </ul>
     </li>
     <li>
+      <a href="#roadmap">Roadmap</a>
+    </li>
+    <li>
       <a href="#getting-started">Getting Started</a>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li>
+      <a href="#Documentation">Documentation</a>
+    </li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -78,9 +83,26 @@ See the [open issues](#) for a full list of proposed features (and known issues)
 
 <!-- GETTING STARTED -->
 
-## Getting the integration library
+## Getting started
 
-tbd
+For an explanation on how to get started, please refer to
+the [quickstart doc](https://github.com/it-at-m/digiwf-ok.ewo-integration/blob/add-docs/docs/quickstart.md).
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## Documentation
+
+For all further documentation, please refer to
+the [documentations doc](https://github.com/it-at-m/digiwf-ok.ewo-integration/blob/add-docs/docs/documentation.md).
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## Architecture
+
+For a small impression of the architecture, please refer to
+the [architecture doc](https://github.com/it-at-m/digiwf-ok.ewo-integration/blob/add-docs/docs/architecture.md).
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
 
@@ -89,14 +111,18 @@ tbd
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any
 contributions you make are **greatly appreciated**.
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also
-simply open an issue with the tag "enhancement". Don't forget to give the project a star! Thanks again!
+If you have a suggestion that would make this better, please open an issue with the tag "enhancement", fork the repo and
+create a pull request. You can also simply open an issue with the tag "enhancement". Don't forget to give the project a
+star! Thanks again!
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+1. Open an issue with the tag "enhancement"
+2. Fork the Project
+3. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+4. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+5. Push to the Branch (`git push origin feature/AmazingFeature`)
+6. Open a Pull Request
+
+More about this in the [CODE_OF_CONDUCT](/CODE_OF_CONDUCT.md) file.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -105,10 +131,9 @@ simply open an issue with the tag "enhancement". Don't forget to give the projec
 
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the MIT License. See `LICENSE` file for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
 
 
 <!-- CONTACT -->
@@ -117,33 +142,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 it@m - opensource@muenchendigital.io
 
-Join our [Slack Channel](https://join.slack.com/t/digiwf/shared_invite/zt-14jxazj1j-jq0WNtXp7S7HAwJA7tKgpw) for more
-information!
+[join our slack channel](https://join.slack.com/t/digiwf/shared_invite/zt-14jxazj1j-jq0WNtXp7S7HAwJA7tKgpw)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-
-[contributors-shield]: https://img.shields.io/github/contributors/it-at-m/digiwf-ok.ewo-integration.svg?style=for-the-badge
-
-[contributors-url]: https://github.com/it-at-m/digiwf-ok.ewo-integration/graphs/contributors
-
-[forks-shield]: https://img.shields.io/github/forks/it-at-m/digiwf-ok.ewo-integration.svg?style=for-the-badge
-
-[forks-url]: https://github.com/it-at-m/digiwf-s3-integration/network/members
-
-[stars-shield]: https://img.shields.io/github/stars/it-at-m/digiwf-ok.ewo-integration.svg?style=for-the-badge
-
-[stars-url]: https://github.com/it-at-m/digiwf-s3-integration/stargazers
-
-[issues-shield]: https://img.shields.io/github/issues/it-at-m/digiwf-ok.ewo-integration.svg?style=for-the-badge
-
-[issues-url]: https://github.com/it-at-m/digiwf-ok.ewo-integration/issues
-
-[license-shield]: https://img.shields.io/github/license/it-at-m/digiwf-ok.ewo-integration.svg?style=for-the-badge
-
-[license-url]: https://github.com/it-at-m/digiwf-ok.ewo-integration/blob/master/LICENSE
-
-[product-screenshot]: images/screenshot.png
