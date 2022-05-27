@@ -11,7 +11,7 @@ public class PropertiesService {
     private final String benutzerId;
 
     public BenutzerType getBenutzerTypeWithBenutzerId() {
-        final BenutzerType benutzerType = new BenutzerType();
+        final var benutzerType = new BenutzerType();
         benutzerType.setBenutzerId(this.getBenutzerId());
         return benutzerType;
     }
