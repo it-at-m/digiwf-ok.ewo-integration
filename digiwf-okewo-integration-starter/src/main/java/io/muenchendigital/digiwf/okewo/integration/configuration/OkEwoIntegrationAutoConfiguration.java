@@ -5,7 +5,9 @@ import io.muenchendigital.digiwf.okewo.integration.gen.api.PersonApi;
 import io.muenchendigital.digiwf.okewo.integration.gen.api.PersonErweitertApi;
 import io.muenchendigital.digiwf.okewo.integration.properties.OkEwoIntegrationProperties;
 import io.muenchendigital.digiwf.okewo.integration.service.PropertiesService;
+import io.muenchendigital.digiwf.spring.cloudstream.utils.configuration.StreamingConfiguration;
 import lombok.RequiredArgsConstructor;
+import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
@@ -15,6 +17,7 @@ import org.springframework.web.client.RestTemplate;
 
 
 @RequiredArgsConstructor
+@AutoConfigureBefore({StreamingConfiguration.class})
 @ComponentScan(
         basePackages = "io.muenchendigital.digiwf.okewo.integration",
         excludeFilters = {
