@@ -52,11 +52,12 @@ public class PersonApi {
      * 
      * <p><b>200</b> - Output type
      * @param om Ordnungsmerkmal der gesuchten Person (required)
+     * @param benutzerId BenutzerId des Anfragenden Service (required)
      * @return Person
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public Person deMuenchenEaiEwoRouteROUTEPROCESSGETPERSON(String om) throws RestClientException {
-        return deMuenchenEaiEwoRouteROUTEPROCESSGETPERSONWithHttpInfo(om).getBody();
+    public Person deMuenchenEaiEwoRouteROUTEPROCESSGETPERSON(String om, String benutzerId) throws RestClientException {
+        return deMuenchenEaiEwoRouteROUTEPROCESSGETPERSONWithHttpInfo(om, benutzerId).getBody();
     }
 
     /**
@@ -64,14 +65,19 @@ public class PersonApi {
      * 
      * <p><b>200</b> - Output type
      * @param om Ordnungsmerkmal der gesuchten Person (required)
+     * @param benutzerId BenutzerId des Anfragenden Service (required)
      * @return ResponseEntity&lt;Person&gt;
      * @throws RestClientException if an error occurs while attempting to invoke the API
      */
-    public ResponseEntity<Person> deMuenchenEaiEwoRouteROUTEPROCESSGETPERSONWithHttpInfo(String om) throws RestClientException {
+    public ResponseEntity<Person> deMuenchenEaiEwoRouteROUTEPROCESSGETPERSONWithHttpInfo(String om, String benutzerId) throws RestClientException {
         Object postBody = null;
         // verify the required parameter 'om' is set
         if (om == null) {
             throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'om' when calling deMuenchenEaiEwoRouteROUTEPROCESSGETPERSON");
+        }
+        // verify the required parameter 'benutzerId' is set
+        if (benutzerId == null) {
+            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'benutzerId' when calling deMuenchenEaiEwoRouteROUTEPROCESSGETPERSON");
         }
         // create path and map variables
         final Map<String, Object> uriVariables = new HashMap<String, Object>();
@@ -81,6 +87,7 @@ public class PersonApi {
         final MultiValueMap<String, String> queryParams = new LinkedMultiValueMap<String, String>();
         final HttpHeaders headerParams = new HttpHeaders();
         final MultiValueMap<String, Object> formParams = new LinkedMultiValueMap<String, Object>();
+        queryParams.putAll(apiClient.parameterToMultiValueMap(null, "benutzerId", benutzerId));
 
         final String[] accepts = { 
             "application/json;charset&#x3D;UTF-8"

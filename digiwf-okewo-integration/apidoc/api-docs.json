@@ -38,6 +38,13 @@
             "description": "Ordnungsmerkmal der gesuchten Person",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "benutzerId",
+            "in": "query",
+            "description": "BenutzerId des Anfragenden Service",
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {
@@ -95,6 +102,13 @@
             "name": "om",
             "in": "path",
             "description": "Ordnungsmerkmal der gesuchten Person",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "benutzerId",
+            "in": "query",
+            "description": "BenutzerId des Anfragenden Service",
             "required": true,
             "type": "string"
           }

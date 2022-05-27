@@ -24,15 +24,16 @@ public class OkEwoPersonErweitertRepository {
     /**
      * Gets a {@link PersonErweitert} by Ordnungsmerkmal.
      *
-     * @param om as Ordnungsmerkmal which identifies a {@link PersonErweitert}.
+     * @param om         as Ordnungsmerkmal which identifies a {@link PersonErweitert}.
+     * @param benutzerId to identify the requesting application.
      * @return the {@link PersonErweitert} identified by Ordnungsmerkmal.
      * @throws OkEwoIntegrationClientErrorException if the problem is with the client.
      * @throws OkEwoIntegrationServerErrorException if the problem is with OK.EWO.
      * @throws OkEwoIntegrationException            if the problem cannot be assigned directly to OK.EWO or client.
      */
-    public PersonErweitert getPerson(final String om) throws OkEwoIntegrationClientErrorException, OkEwoIntegrationServerErrorException, OkEwoIntegrationException {
+    public PersonErweitert getPerson(final String om, final String benutzerId) throws OkEwoIntegrationClientErrorException, OkEwoIntegrationServerErrorException, OkEwoIntegrationException {
         try {
-            return this.personErweitertApi.deMuenchenEaiEwoRouteROUTEPROCESSGETPERSONERWEITERT(om);
+            return this.personErweitertApi.deMuenchenEaiEwoRouteROUTEPROCESSGETPERSONERWEITERT(om, benutzerId);
         } catch (final HttpClientErrorException exception) {
             final String message = String.format("The request to get a person failed with %s.", exception.getStatusCode());
             log.error(message);

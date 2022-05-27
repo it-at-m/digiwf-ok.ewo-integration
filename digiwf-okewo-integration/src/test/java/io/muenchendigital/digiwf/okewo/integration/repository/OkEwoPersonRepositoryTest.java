@@ -42,32 +42,34 @@ class OkEwoPersonRepositoryTest {
     @Test
     void getPerson() throws OkEwoIntegrationException, OkEwoIntegrationClientErrorException, OkEwoIntegrationServerErrorException {
         final String om = "ordnungsmerkmal";
+        final String benutzerId = "benutzerId";
 
-        Mockito.when(this.personApi.deMuenchenEaiEwoRouteROUTEPROCESSGETPERSON(om)).thenReturn(new Person());
+        Mockito.when(this.personApi.deMuenchenEaiEwoRouteROUTEPROCESSGETPERSON(om, benutzerId)).thenReturn(new Person());
 
-        final Person result = this.okEwoPersonRepository.getPerson(om);
+        final Person result = this.okEwoPersonRepository.getPerson(om, benutzerId);
         assertThat(result, is(new Person()));
 
-        Mockito.verify(this.personApi, Mockito.times(1)).deMuenchenEaiEwoRouteROUTEPROCESSGETPERSON(om);
+        Mockito.verify(this.personApi, Mockito.times(1)).deMuenchenEaiEwoRouteROUTEPROCESSGETPERSON(om, benutzerId);
     }
 
     @Test
     void getPersonException() {
         final String om = "ordnungsmerkmal";
+        final String benutzerId = "benutzerId";
 
-        Mockito.doThrow(new HttpClientErrorException(HttpStatus.BAD_REQUEST)).when(this.personApi).deMuenchenEaiEwoRouteROUTEPROCESSGETPERSON(om);
-        Assertions.assertThrows(OkEwoIntegrationClientErrorException.class, () -> this.okEwoPersonRepository.getPerson(om));
-        Mockito.verify(this.personApi, Mockito.times(1)).deMuenchenEaiEwoRouteROUTEPROCESSGETPERSON(om);
+        Mockito.doThrow(new HttpClientErrorException(HttpStatus.BAD_REQUEST)).when(this.personApi).deMuenchenEaiEwoRouteROUTEPROCESSGETPERSON(om, benutzerId);
+        Assertions.assertThrows(OkEwoIntegrationClientErrorException.class, () -> this.okEwoPersonRepository.getPerson(om, benutzerId));
+        Mockito.verify(this.personApi, Mockito.times(1)).deMuenchenEaiEwoRouteROUTEPROCESSGETPERSON(om, benutzerId);
         Mockito.reset(this.personApi);
 
-        Mockito.doThrow(new HttpServerErrorException(HttpStatus.INTERNAL_SERVER_ERROR)).when(this.personApi).deMuenchenEaiEwoRouteROUTEPROCESSGETPERSON(om);
-        Assertions.assertThrows(OkEwoIntegrationServerErrorException.class, () -> this.okEwoPersonRepository.getPerson(om));
-        Mockito.verify(this.personApi, Mockito.times(1)).deMuenchenEaiEwoRouteROUTEPROCESSGETPERSON(om);
+        Mockito.doThrow(new HttpServerErrorException(HttpStatus.INTERNAL_SERVER_ERROR)).when(this.personApi).deMuenchenEaiEwoRouteROUTEPROCESSGETPERSON(om, benutzerId);
+        Assertions.assertThrows(OkEwoIntegrationServerErrorException.class, () -> this.okEwoPersonRepository.getPerson(om, benutzerId));
+        Mockito.verify(this.personApi, Mockito.times(1)).deMuenchenEaiEwoRouteROUTEPROCESSGETPERSON(om, benutzerId);
         Mockito.reset(this.personApi);
 
-        Mockito.doThrow(new RestClientException("Something happened")).when(this.personApi).deMuenchenEaiEwoRouteROUTEPROCESSGETPERSON(om);
-        Assertions.assertThrows(OkEwoIntegrationException.class, () -> this.okEwoPersonRepository.getPerson(om));
-        Mockito.verify(this.personApi, Mockito.times(1)).deMuenchenEaiEwoRouteROUTEPROCESSGETPERSON(om);
+        Mockito.doThrow(new RestClientException("Something happened")).when(this.personApi).deMuenchenEaiEwoRouteROUTEPROCESSGETPERSON(om, benutzerId);
+        Assertions.assertThrows(OkEwoIntegrationException.class, () -> this.okEwoPersonRepository.getPerson(om, benutzerId));
+        Mockito.verify(this.personApi, Mockito.times(1)).deMuenchenEaiEwoRouteROUTEPROCESSGETPERSON(om, benutzerId);
         Mockito.reset(this.personApi);
     }
 
