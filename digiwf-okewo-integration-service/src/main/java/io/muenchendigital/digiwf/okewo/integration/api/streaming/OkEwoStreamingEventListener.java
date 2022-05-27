@@ -35,7 +35,7 @@ public class OkEwoStreamingEventListener {
     private final OkEwoPersonErweitertService okEwoPersonErweitertService;
 
     /**
-     * The Consumer expects an {@link OrdnungsmerkmalDto} which represents an "om" for OK.EWO.
+     * The Consumer expects an {@link OkEwoEventDto} which represents an {@link OrdnungsmerkmalDto} for OK.EWO.
      * <p>
      * After successfully requesting OK.EWO a JSON representing a {@link Person} is returned.
      * <p>
@@ -63,7 +63,7 @@ public class OkEwoStreamingEventListener {
     }
 
     /**
-     * The Consumer expects a {@link SuchePersonAnfrage} which represents the request dto for OK.EWO.
+     * The Consumer expects a {@link OkEwoEventDto} which represents the {@link SuchePersonAnfrage} for OK.EWO.
      * <p>
      * After successfully requesting OK.EWO a JSON representing a {@link SuchePersonAntwort} is returned.
      * <p>
@@ -91,7 +91,7 @@ public class OkEwoStreamingEventListener {
     }
 
     /**
-     * The Consumer expects an {@link OrdnungsmerkmalDto} which represents an "om" for OK.EWO.
+     * The Consumer expects an {@link OkEwoEventDto} which represents an {@link OrdnungsmerkmalDto} for OK.EWO.
      * <p>
      * After successfully requesting OK.EWO a JSON representing a {@link PersonErweitert} is returned.
      * <p>
@@ -119,7 +119,7 @@ public class OkEwoStreamingEventListener {
     }
 
     /**
-     * The Consumer expects a {@link SuchePersonerweitertAnfrage} which represents the request dto for OK.EWO.
+     * The Consumer expects a {@link OkEwoEventDto} which represents the {@link SuchePersonerweitertAnfrage} for OK.EWO.
      * <p>
      * After successfully requesting OK.EWO a JSON representing a {@link SuchePersonerweitertAntwort} is returned.
      * <p>
