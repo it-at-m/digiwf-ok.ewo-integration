@@ -30,7 +30,10 @@ public class OkEwoPersonErweitertService {
      * @throws OkEwoIntegrationException            if the problem cannot be assigned directly to OK.EWO or client.
      */
     public PersonErweitert getPerson(final String om) throws OkEwoIntegrationClientErrorException, OkEwoIntegrationServerErrorException, OkEwoIntegrationException {
-        return this.okEwoPersonErweitertRepository.getPerson(om, this.propertiesService.getBenutzerId());
+        return this.okEwoPersonErweitertRepository.getPerson(
+                om,
+                this.propertiesService.getBenutzerId()
+        );
     }
 
     /**
