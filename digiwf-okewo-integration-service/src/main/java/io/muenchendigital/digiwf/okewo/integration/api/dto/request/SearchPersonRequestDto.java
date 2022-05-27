@@ -1,4 +1,4 @@
-package io.muenchendigital.digiwf.okewo.integration.api.dto;
+package io.muenchendigital.digiwf.okewo.integration.api.dto.request;
 
 import io.muenchendigital.digiwf.okewo.integration.gen.model.SuchePersonAnfrage;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package io.muenchendigital.digiwf.okewo.integration.api.dto;
+package io.muenchendigital.digiwf.okewo.integration.api.dto.request;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;

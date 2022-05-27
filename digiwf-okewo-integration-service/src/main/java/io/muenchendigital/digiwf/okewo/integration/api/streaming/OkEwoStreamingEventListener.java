@@ -1,10 +1,10 @@
 package io.muenchendigital.digiwf.okewo.integration.api.streaming;
 
-import io.muenchendigital.digiwf.okewo.integration.api.dto.OkEwoErrorDto;
-import io.muenchendigital.digiwf.okewo.integration.api.dto.OkEwoEventDto;
-import io.muenchendigital.digiwf.okewo.integration.api.dto.OrdnungsmerkmalDto;
-import io.muenchendigital.digiwf.okewo.integration.api.dto.SearchPersonErweitertRequestDto;
-import io.muenchendigital.digiwf.okewo.integration.api.dto.SearchPersonRequestDto;
+import io.muenchendigital.digiwf.okewo.integration.api.dto.request.OkEwoEventDto;
+import io.muenchendigital.digiwf.okewo.integration.api.dto.request.OrdnungsmerkmalDto;
+import io.muenchendigital.digiwf.okewo.integration.api.dto.request.SearchPersonErweitertRequestDto;
+import io.muenchendigital.digiwf.okewo.integration.api.dto.request.SearchPersonRequestDto;
+import io.muenchendigital.digiwf.okewo.integration.api.dto.response.OkEwoErrorDto;
 import io.muenchendigital.digiwf.okewo.integration.gen.model.Person;
 import io.muenchendigital.digiwf.okewo.integration.gen.model.PersonErweitert;
 import io.muenchendigital.digiwf.okewo.integration.gen.model.SuchePersonAnfrage;
