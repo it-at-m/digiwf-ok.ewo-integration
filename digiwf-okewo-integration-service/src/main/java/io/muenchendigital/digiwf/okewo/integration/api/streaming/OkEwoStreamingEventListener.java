@@ -2,19 +2,17 @@ package io.muenchendigital.digiwf.okewo.integration.api.streaming;
 
 import io.muenchendigital.digiwf.okewo.integration.api.dto.OkEwoErrorDto;
 import io.muenchendigital.digiwf.okewo.integration.api.dto.OrdnungsmerkmalDto;
-import io.muenchendigital.digiwf.okewo.integration.gen.model.BenutzerType;
 import io.muenchendigital.digiwf.okewo.integration.gen.model.Person;
 import io.muenchendigital.digiwf.okewo.integration.gen.model.PersonErweitert;
 import io.muenchendigital.digiwf.okewo.integration.gen.model.SuchePersonAnfrage;
 import io.muenchendigital.digiwf.okewo.integration.gen.model.SuchePersonAntwort;
 import io.muenchendigital.digiwf.okewo.integration.gen.model.SuchePersonerweitertAnfrage;
 import io.muenchendigital.digiwf.okewo.integration.gen.model.SuchePersonerweitertAntwort;
-import io.muenchendigital.digiwf.okewo.integration.repository.OkEwoPersonErweitertRepository;
-import io.muenchendigital.digiwf.okewo.integration.repository.OkEwoPersonRepository;
+import io.muenchendigital.digiwf.okewo.integration.service.OkEwoPersonErweitertService;
+import io.muenchendigital.digiwf.okewo.integration.service.OkEwoPersonService;
 import io.muenchendigital.digiwf.spring.cloudstream.utils.api.streaming.service.CorrelateMessageService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.messaging.Message;
 
@@ -29,12 +27,9 @@ public class OkEwoStreamingEventListener {
 
     private final CorrelateMessageService correlateMessageService;
 
-    private final OkEwoPersonRepository okEwoPersonRepository;
+    private final OkEwoPersonService okEwoPersonService;
 
-    private final OkEwoPersonErweitertRepository okEwoPersonErweitertRepository;
-
-    @Value("${io.muenchendigital.digiwf.okewo.benutzerId}")
-    private String benutzerId;
+    private final OkEwoPersonErweitertService okEwoPersonErweitertService;
 
     /**
      * The Consumer expects an {@link OrdnungsmerkmalDto} which represents an "om" for OK.EWO.
@@ -52,7 +47,7 @@ public class OkEwoStreamingEventListener {
 
             Object ewoResult;
             try {
-                ewoResult = this.okEwoPersonRepository.getPerson(ordnungsmerkmal.getOm(), this.benutzerId);
+                ewoResult = this.okEwoPersonService.getPerson(ordnungsmerkmal.getOm());
             } catch (final Exception exception) {
                 ewoResult = new OkEwoErrorDto(exception.getMessage());
             }
@@ -77,13 +72,10 @@ public class OkEwoStreamingEventListener {
             log.debug(message.toString());
 
             final SuchePersonAnfrage suchePersonAnfrage = message.getPayload();
-            final BenutzerType benutzerType = new BenutzerType();
-            benutzerType.setBenutzerId(this.benutzerId);
-            suchePersonAnfrage.setBenutzer(benutzerType);
 
             Object ewoResult;
             try {
-                ewoResult = this.okEwoPersonRepository.searchPerson(suchePersonAnfrage);
+                ewoResult = this.okEwoPersonService.searchPerson(suchePersonAnfrage);
             } catch (final Exception exception) {
                 ewoResult = new OkEwoErrorDto(exception.getMessage());
             }
@@ -111,7 +103,7 @@ public class OkEwoStreamingEventListener {
 
             Object ewoResult;
             try {
-                ewoResult = this.okEwoPersonErweitertRepository.getPerson(ordnungsmerkmal.getOm(), this.benutzerId);
+                ewoResult = this.okEwoPersonErweitertService.getPerson(ordnungsmerkmal.getOm());
             } catch (final Exception exception) {
                 ewoResult = new OkEwoErrorDto(exception.getMessage());
             }
@@ -136,13 +128,10 @@ public class OkEwoStreamingEventListener {
             log.debug(message.toString());
 
             final SuchePersonerweitertAnfrage suchePersonerweitertAnfrage = message.getPayload();
-            final BenutzerType benutzerType = new BenutzerType();
-            benutzerType.setBenutzerId(this.benutzerId);
-            suchePersonerweitertAnfrage.setBenutzer(benutzerType);
 
             Object ewoResult;
             try {
-                ewoResult = this.okEwoPersonErweitertRepository.searchPerson(suchePersonerweitertAnfrage);
+                ewoResult = this.okEwoPersonErweitertService.searchPerson(suchePersonerweitertAnfrage);
             } catch (final Exception exception) {
                 ewoResult = new OkEwoErrorDto(exception.getMessage());
             }

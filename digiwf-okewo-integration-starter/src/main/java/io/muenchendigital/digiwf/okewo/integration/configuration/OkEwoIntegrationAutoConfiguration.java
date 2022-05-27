@@ -4,6 +4,7 @@ import io.muenchendigital.digiwf.okewo.integration.gen.ApiClient;
 import io.muenchendigital.digiwf.okewo.integration.gen.api.PersonApi;
 import io.muenchendigital.digiwf.okewo.integration.gen.api.PersonErweitertApi;
 import io.muenchendigital.digiwf.okewo.integration.properties.OkEwoIntegrationProperties;
+import io.muenchendigital.digiwf.okewo.integration.service.PropertiesService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -77,6 +78,14 @@ public class OkEwoIntegrationAutoConfiguration {
     public PersonErweitertApi okEwoPersonErweitertApi(final RestTemplateBuilder restTemplateBuilder) {
         final ApiClient apiClient = this.okEwoApiClient(restTemplateBuilder);
         return new PersonErweitertApi(apiClient);
+    }
+
+    /**
+     * @return a bean of type {@link PropertiesService} named by method name.
+     */
+    @Bean
+    public PropertiesService propertiesService() {
+        return new PropertiesService(this.okEwoIntegrationProperties.getBenutzerId());
     }
 
 }
