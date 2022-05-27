@@ -1,7 +1,10 @@
 package io.muenchendigital.digiwf.okewo.integration.api.streaming;
 
 import io.muenchendigital.digiwf.okewo.integration.api.dto.OkEwoErrorDto;
+import io.muenchendigital.digiwf.okewo.integration.api.dto.OkEwoEventDto;
 import io.muenchendigital.digiwf.okewo.integration.api.dto.OrdnungsmerkmalDto;
+import io.muenchendigital.digiwf.okewo.integration.api.dto.SearchPersonErweitertRequestDto;
+import io.muenchendigital.digiwf.okewo.integration.api.dto.SearchPersonRequestDto;
 import io.muenchendigital.digiwf.okewo.integration.gen.model.Person;
 import io.muenchendigital.digiwf.okewo.integration.gen.model.PersonErweitert;
 import io.muenchendigital.digiwf.okewo.integration.gen.model.SuchePersonAnfrage;
@@ -39,15 +42,15 @@ public class OkEwoStreamingEventListener {
      * In case of an error the error message is returned as a JSON representing {@link OkEwoErrorDto}.
      */
     @Bean
-    public Consumer<Message<OrdnungsmerkmalDto>> getPerson() {
+    public Consumer<Message<OkEwoEventDto>> getPerson() {
         return message -> {
             log.debug(message.toString());
 
-            final OrdnungsmerkmalDto ordnungsmerkmal = message.getPayload();
+            final var ordnungsmerkmal = (OrdnungsmerkmalDto) message.getPayload().getRequestData();
 
             Object ewoResult;
             try {
-                ewoResult = this.okEwoPersonService.getPerson(ordnungsmerkmal.getOm());
+                ewoResult = this.okEwoPersonService.getPerson(ordnungsmerkmal.getOrdnungsmerkmal());
             } catch (final Exception exception) {
                 ewoResult = new OkEwoErrorDto(exception.getMessage());
             }
@@ -67,15 +70,15 @@ public class OkEwoStreamingEventListener {
      * In case of an error the error message is returned as a JSON representing {@link OkEwoErrorDto}.
      */
     @Bean
-    public Consumer<Message<SuchePersonAnfrage>> searchPerson() {
+    public Consumer<Message<OkEwoEventDto>> searchPerson() {
         return message -> {
             log.debug(message.toString());
 
-            final SuchePersonAnfrage suchePersonAnfrage = message.getPayload();
+            final var searchPersonRequestDto = (SearchPersonRequestDto) message.getPayload().getRequestData();
 
             Object ewoResult;
             try {
-                ewoResult = this.okEwoPersonService.searchPerson(suchePersonAnfrage);
+                ewoResult = this.okEwoPersonService.searchPerson(searchPersonRequestDto.getSuchePersonAnfrage());
             } catch (final Exception exception) {
                 ewoResult = new OkEwoErrorDto(exception.getMessage());
             }
@@ -95,15 +98,15 @@ public class OkEwoStreamingEventListener {
      * In case of an error the error message is returned as a JSON representing {@link OkEwoErrorDto}.
      */
     @Bean
-    public Consumer<Message<OrdnungsmerkmalDto>> getPersonErweitert() {
+    public Consumer<Message<OkEwoEventDto>> getPersonErweitert() {
         return message -> {
             log.debug(message.toString());
 
-            final OrdnungsmerkmalDto ordnungsmerkmal = message.getPayload();
+            final var ordnungsmerkmal = (OrdnungsmerkmalDto) message.getPayload().getRequestData();
 
             Object ewoResult;
             try {
-                ewoResult = this.okEwoPersonErweitertService.getPerson(ordnungsmerkmal.getOm());
+                ewoResult = this.okEwoPersonErweitertService.getPerson(ordnungsmerkmal.getOrdnungsmerkmal());
             } catch (final Exception exception) {
                 ewoResult = new OkEwoErrorDto(exception.getMessage());
             }
@@ -123,15 +126,15 @@ public class OkEwoStreamingEventListener {
      * In case of an error the error message is returned as a JSON representing {@link OkEwoErrorDto}.
      */
     @Bean
-    public Consumer<Message<SuchePersonerweitertAnfrage>> searchPersonErweitert() {
+    public Consumer<Message<OkEwoEventDto>> searchPersonErweitert() {
         return message -> {
             log.debug(message.toString());
 
-            final SuchePersonerweitertAnfrage suchePersonerweitertAnfrage = message.getPayload();
+            final var searchPersonErweitertRequestDto = (SearchPersonErweitertRequestDto) message.getPayload().getRequestData();
 
             Object ewoResult;
             try {
-                ewoResult = this.okEwoPersonErweitertService.searchPerson(suchePersonerweitertAnfrage);
+                ewoResult = this.okEwoPersonErweitertService.searchPerson(searchPersonErweitertRequestDto.getSuchePersonerweitertAnfrage());
             } catch (final Exception exception) {
                 ewoResult = new OkEwoErrorDto(exception.getMessage());
             }
