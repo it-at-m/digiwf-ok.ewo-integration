@@ -1,11 +1,11 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "Schema 2.0.2 Service 2.2.0",
+    "version": "Schema 2.0.2 Service 2.3.0-SNAPSHOT",
     "title": "Camel REST API"
   },
   "host": "localhost:8080",
-  "basePath": "/rest",
+  "basePath": "/personen/2.0/rest",
   "tags": [
     {
       "name": "person",
@@ -17,7 +17,8 @@
     }
   ],
   "schemes": [
-    "http"
+    "http",
+    "https"
   ],
   "paths": {
     "person/{om}": {

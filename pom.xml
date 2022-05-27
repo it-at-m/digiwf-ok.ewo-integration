@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.muenchendigital.digiwf</groupId>
     <artifactId>digiwf-okewo-integration-parent</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <name>digiwf-okewo-integration-parent</name>
     <packaging>pom</packaging>
     <description>OK.EWO integration used by DigiWF</description>

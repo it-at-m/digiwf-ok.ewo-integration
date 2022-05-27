@@ -1,6 +1,7 @@
 package io.muenchendigital.digiwf.okewo.integration.api.streaming;
 
 import io.muenchendigital.digiwf.okewo.integration.api.dto.OkEwoErrorDto;
+import io.muenchendigital.digiwf.okewo.integration.api.dto.OrdnungsmerkmalDto;
 import io.muenchendigital.digiwf.okewo.integration.gen.model.Person;
 import io.muenchendigital.digiwf.okewo.integration.gen.model.PersonErweitert;
 import io.muenchendigital.digiwf.okewo.integration.gen.model.SuchePersonAnfrage;
@@ -31,22 +32,22 @@ public class OkEwoStreamingEventListener {
     private final OkEwoPersonErweitertRepository okEwoPersonErweitertRepository;
 
     /**
-     * The Consumer expects a String which represents a "om" for OK.EWO.
+     * The Consumer expects an {@link OrdnungsmerkmalDto} which represents an "om" for OK.EWO.
      * <p>
      * After successfully requesting OK.EWO a JSON representing a {@link Person} is returned.
      * <p>
      * In case of an error the error message is returned as a JSON representing {@link OkEwoErrorDto}.
      */
     @Bean
-    public Consumer<Message<String>> getPerson() {
+    public Consumer<Message<OrdnungsmerkmalDto>> getPerson() {
         return message -> {
             log.debug(message.toString());
 
-            final String ordnungsmerkmal = message.getPayload();
+            final OrdnungsmerkmalDto ordnungsmerkmal = message.getPayload();
 
             Object ewoResult;
             try {
-                ewoResult = this.okEwoPersonRepository.getPerson(ordnungsmerkmal);
+                ewoResult = this.okEwoPersonRepository.getPerson(ordnungsmerkmal.getOm());
             } catch (final Exception exception) {
                 ewoResult = new OkEwoErrorDto(exception.getMessage());
             }
@@ -87,22 +88,22 @@ public class OkEwoStreamingEventListener {
     }
 
     /**
-     * The Consumer expects a String which represents a "om" for OK.EWO.
+     * The Consumer expects an {@link OrdnungsmerkmalDto} which represents an "om" for OK.EWO.
      * <p>
      * After successfully requesting OK.EWO a JSON representing a {@link PersonErweitert} is returned.
      * <p>
      * In case of an error the error message is returned as a JSON representing {@link OkEwoErrorDto}.
      */
     @Bean
-    public Consumer<Message<String>> getPersonErweitert() {
+    public Consumer<Message<OrdnungsmerkmalDto>> getPersonErweitert() {
         return message -> {
             log.debug(message.toString());
 
-            final String ordnungsmerkmal = message.getPayload();
+            final OrdnungsmerkmalDto ordnungsmerkmal = message.getPayload();
 
             Object ewoResult;
             try {
-                ewoResult = this.okEwoPersonErweitertRepository.getPerson(ordnungsmerkmal);
+                ewoResult = this.okEwoPersonErweitertRepository.getPerson(ordnungsmerkmal.getOm());
             } catch (final Exception exception) {
                 ewoResult = new OkEwoErrorDto(exception.getMessage());
             }
