@@ -22,4 +22,7 @@ public class OkEwoIntegrationProperties {
     @NotBlank
     private String password;
 
+    @NotBlank
+    private String benutzerId;
+
 }

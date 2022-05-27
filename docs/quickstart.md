@@ -29,6 +29,7 @@ io.muenchendigital.digiwf.okewo:
   url: <URL>
   username: <USERNAME>
   password: <PASSWORD>
+  benutzerId: <BENUTZER_ID>
 ```
 
 5. Use the repository beans
