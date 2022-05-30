@@ -42,13 +42,13 @@ public class AbstractWohnungType {
   private AnschriftErweitertType melderegisterAnschrift = null;
 
   @JsonProperty("einzug")
-  private java.time.LocalDateTime einzug = null;
+  private String einzug = null;
 
   @JsonProperty("auszug")
   private TeilbekanntesDatumType auszug = null;
 
   @JsonProperty("statuswechsel")
-  private java.time.LocalDateTime statuswechsel = null;
+  private String statuswechsel = null;
 
   @JsonProperty("meldungStatuswechsel")
   private MeldungType meldungStatuswechsel = null;
@@ -90,7 +90,7 @@ public class AbstractWohnungType {
     this.melderegisterAnschrift = melderegisterAnschrift;
   }
 
-  public AbstractWohnungType einzug(java.time.LocalDateTime einzug) {
+  public AbstractWohnungType einzug(String einzug) {
     this.einzug = einzug;
     return this;
   }
@@ -99,13 +99,12 @@ public class AbstractWohnungType {
    * Get einzug
    * @return einzug
   **/
-  @Valid
   @Schema(description = "")
-  public java.time.LocalDateTime getEinzug() {
+  public String getEinzug() {
     return einzug;
   }
 
-  public void setEinzug(java.time.LocalDateTime einzug) {
+  public void setEinzug(String einzug) {
     this.einzug = einzug;
   }
 
@@ -128,7 +127,7 @@ public class AbstractWohnungType {
     this.auszug = auszug;
   }
 
-  public AbstractWohnungType statuswechsel(java.time.LocalDateTime statuswechsel) {
+  public AbstractWohnungType statuswechsel(String statuswechsel) {
     this.statuswechsel = statuswechsel;
     return this;
   }
@@ -137,13 +136,12 @@ public class AbstractWohnungType {
    * Get statuswechsel
    * @return statuswechsel
   **/
-  @Valid
   @Schema(description = "")
-  public java.time.LocalDateTime getStatuswechsel() {
+  public String getStatuswechsel() {
     return statuswechsel;
   }
 
-  public void setStatuswechsel(java.time.LocalDateTime statuswechsel) {
+  public void setStatuswechsel(String statuswechsel) {
     this.statuswechsel = statuswechsel;
   }
 

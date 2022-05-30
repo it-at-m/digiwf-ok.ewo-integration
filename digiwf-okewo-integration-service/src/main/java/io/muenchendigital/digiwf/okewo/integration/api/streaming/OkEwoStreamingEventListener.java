@@ -17,11 +17,13 @@ import io.muenchendigital.digiwf.spring.cloudstream.utils.api.streaming.service.
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.Message;
 
 import java.util.Map;
 import java.util.function.Consumer;
 
+@Configuration
 @RequiredArgsConstructor
 @Slf4j
 public class OkEwoStreamingEventListener {

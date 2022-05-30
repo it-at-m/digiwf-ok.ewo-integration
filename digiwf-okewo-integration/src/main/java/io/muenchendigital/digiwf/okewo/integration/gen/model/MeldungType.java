@@ -61,7 +61,7 @@ public class MeldungType {
   private ArtEnum art = null;
 
   @JsonProperty("datum")
-  private java.time.LocalDateTime datum = null;
+  private String datum = null;
 
   public MeldungType art(ArtEnum art) {
     this.art = art;
@@ -81,7 +81,7 @@ public class MeldungType {
     this.art = art;
   }
 
-  public MeldungType datum(java.time.LocalDateTime datum) {
+  public MeldungType datum(String datum) {
     this.datum = datum;
     return this;
   }
@@ -90,13 +90,12 @@ public class MeldungType {
    * Get datum
    * @return datum
   **/
-  @Valid
   @Schema(description = "")
-  public java.time.LocalDateTime getDatum() {
+  public String getDatum() {
     return datum;
   }
 
-  public void setDatum(java.time.LocalDateTime datum) {
+  public void setDatum(String datum) {
     this.datum = datum;
   }
 

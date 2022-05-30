@@ -27,9 +27,9 @@ import javax.validation.Valid;
 
 public class OptionsDeutscherType {
   @JsonProperty("befristungBis")
-  private java.time.LocalDateTime befristungBis = null;
+  private String befristungBis = null;
 
-  public OptionsDeutscherType befristungBis(java.time.LocalDateTime befristungBis) {
+  public OptionsDeutscherType befristungBis(String befristungBis) {
     this.befristungBis = befristungBis;
     return this;
   }
@@ -38,13 +38,12 @@ public class OptionsDeutscherType {
    * Get befristungBis
    * @return befristungBis
   **/
-  @Valid
   @Schema(description = "")
-  public java.time.LocalDateTime getBefristungBis() {
+  public String getBefristungBis() {
     return befristungBis;
   }
 
-  public void setBefristungBis(java.time.LocalDateTime befristungBis) {
+  public void setBefristungBis(String befristungBis) {
     this.befristungBis = befristungBis;
   }
 

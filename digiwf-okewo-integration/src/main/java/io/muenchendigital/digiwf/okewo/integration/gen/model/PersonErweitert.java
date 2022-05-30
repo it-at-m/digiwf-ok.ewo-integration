@@ -150,7 +150,7 @@ public class PersonErweitert {
   private List<WaffenbesitzVerbotType> waffenbesitzVerbot = null;
 
   @JsonProperty("verlustDeutscheStaatsangehoerigkeit")
-  private java.time.LocalDateTime verlustDeutscheStaatsangehoerigkeit = null;
+  private String verlustDeutscheStaatsangehoerigkeit = null;
 
   @JsonProperty("optionsDeutscherDaten")
   private OptionsDeutscherType optionsDeutscherDaten = null;
@@ -643,7 +643,7 @@ public class PersonErweitert {
     this.waffenbesitzVerbot = waffenbesitzVerbot;
   }
 
-  public PersonErweitert verlustDeutscheStaatsangehoerigkeit(java.time.LocalDateTime verlustDeutscheStaatsangehoerigkeit) {
+  public PersonErweitert verlustDeutscheStaatsangehoerigkeit(String verlustDeutscheStaatsangehoerigkeit) {
     this.verlustDeutscheStaatsangehoerigkeit = verlustDeutscheStaatsangehoerigkeit;
     return this;
   }
@@ -652,13 +652,12 @@ public class PersonErweitert {
    * Get verlustDeutscheStaatsangehoerigkeit
    * @return verlustDeutscheStaatsangehoerigkeit
   **/
-  @Valid
   @Schema(description = "")
-  public java.time.LocalDateTime getVerlustDeutscheStaatsangehoerigkeit() {
+  public String getVerlustDeutscheStaatsangehoerigkeit() {
     return verlustDeutscheStaatsangehoerigkeit;
   }
 
-  public void setVerlustDeutscheStaatsangehoerigkeit(java.time.LocalDateTime verlustDeutscheStaatsangehoerigkeit) {
+  public void setVerlustDeutscheStaatsangehoerigkeit(String verlustDeutscheStaatsangehoerigkeit) {
     this.verlustDeutscheStaatsangehoerigkeit = verlustDeutscheStaatsangehoerigkeit;
   }
 

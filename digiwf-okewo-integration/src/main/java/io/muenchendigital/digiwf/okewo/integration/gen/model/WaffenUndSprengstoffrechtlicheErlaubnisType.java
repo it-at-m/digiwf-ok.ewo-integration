@@ -27,9 +27,9 @@ import javax.validation.Valid;
 
 public class WaffenUndSprengstoffrechtlicheErlaubnisType {
   @JsonProperty("angelegtAm")
-  private java.time.LocalDateTime angelegtAm = null;
+  private String angelegtAm = null;
 
-  public WaffenUndSprengstoffrechtlicheErlaubnisType angelegtAm(java.time.LocalDateTime angelegtAm) {
+  public WaffenUndSprengstoffrechtlicheErlaubnisType angelegtAm(String angelegtAm) {
     this.angelegtAm = angelegtAm;
     return this;
   }
@@ -38,13 +38,12 @@ public class WaffenUndSprengstoffrechtlicheErlaubnisType {
    * Get angelegtAm
    * @return angelegtAm
   **/
-  @Valid
   @Schema(description = "")
-  public java.time.LocalDateTime getAngelegtAm() {
+  public String getAngelegtAm() {
     return angelegtAm;
   }
 
-  public void setAngelegtAm(java.time.LocalDateTime angelegtAm) {
+  public void setAngelegtAm(String angelegtAm) {
     this.angelegtAm = angelegtAm;
   }
 

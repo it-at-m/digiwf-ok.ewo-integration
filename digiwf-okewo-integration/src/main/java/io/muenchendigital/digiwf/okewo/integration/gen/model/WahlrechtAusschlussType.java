@@ -36,7 +36,7 @@ public class WahlrechtAusschlussType {
   private String aktenzeichen = null;
 
   @JsonProperty("wahlauschlussBis")
-  private java.time.LocalDateTime wahlauschlussBis = null;
+  private String wahlauschlussBis = null;
 
   public WahlrechtAusschlussType grund(String grund) {
     this.grund = grund;
@@ -92,7 +92,7 @@ public class WahlrechtAusschlussType {
     this.aktenzeichen = aktenzeichen;
   }
 
-  public WahlrechtAusschlussType wahlauschlussBis(java.time.LocalDateTime wahlauschlussBis) {
+  public WahlrechtAusschlussType wahlauschlussBis(String wahlauschlussBis) {
     this.wahlauschlussBis = wahlauschlussBis;
     return this;
   }
@@ -101,13 +101,12 @@ public class WahlrechtAusschlussType {
    * Get wahlauschlussBis
    * @return wahlauschlussBis
   **/
-  @Valid
   @Schema(description = "")
-  public java.time.LocalDateTime getWahlauschlussBis() {
+  public String getWahlauschlussBis() {
     return wahlauschlussBis;
   }
 
-  public void setWahlauschlussBis(java.time.LocalDateTime wahlauschlussBis) {
+  public void setWahlauschlussBis(String wahlauschlussBis) {
     this.wahlauschlussBis = wahlauschlussBis;
   }
 

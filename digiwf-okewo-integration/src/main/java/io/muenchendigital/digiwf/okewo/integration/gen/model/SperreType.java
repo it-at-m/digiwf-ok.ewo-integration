@@ -27,12 +27,12 @@ import javax.validation.Valid;
 
 public class SperreType {
   @JsonProperty("frist")
-  private java.time.LocalDateTime frist = null;
+  private String frist = null;
 
   @JsonProperty("grund")
   private String grund = null;
 
-  public SperreType frist(java.time.LocalDateTime frist) {
+  public SperreType frist(String frist) {
     this.frist = frist;
     return this;
   }
@@ -41,13 +41,12 @@ public class SperreType {
    * Get frist
    * @return frist
   **/
-  @Valid
   @Schema(description = "")
-  public java.time.LocalDateTime getFrist() {
+  public String getFrist() {
     return frist;
   }
 
-  public void setFrist(java.time.LocalDateTime frist) {
+  public void setFrist(String frist) {
     this.frist = frist;
   }
 

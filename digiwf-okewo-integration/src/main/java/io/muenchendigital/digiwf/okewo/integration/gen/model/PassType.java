@@ -39,10 +39,10 @@ public class PassType {
   private String ausstellendeBehoerde = null;
 
   @JsonProperty("ausstellungsdatum")
-  private java.time.LocalDateTime ausstellungsdatum = null;
+  private String ausstellungsdatum = null;
 
   @JsonProperty("ablaufdatum")
-  private java.time.LocalDateTime ablaufdatum = null;
+  private String ablaufdatum = null;
 
   public PassType art(String art) {
     this.art = art;
@@ -116,7 +116,7 @@ public class PassType {
     this.ausstellendeBehoerde = ausstellendeBehoerde;
   }
 
-  public PassType ausstellungsdatum(java.time.LocalDateTime ausstellungsdatum) {
+  public PassType ausstellungsdatum(String ausstellungsdatum) {
     this.ausstellungsdatum = ausstellungsdatum;
     return this;
   }
@@ -125,17 +125,16 @@ public class PassType {
    * Get ausstellungsdatum
    * @return ausstellungsdatum
   **/
-  @Valid
   @Schema(description = "")
-  public java.time.LocalDateTime getAusstellungsdatum() {
+  public String getAusstellungsdatum() {
     return ausstellungsdatum;
   }
 
-  public void setAusstellungsdatum(java.time.LocalDateTime ausstellungsdatum) {
+  public void setAusstellungsdatum(String ausstellungsdatum) {
     this.ausstellungsdatum = ausstellungsdatum;
   }
 
-  public PassType ablaufdatum(java.time.LocalDateTime ablaufdatum) {
+  public PassType ablaufdatum(String ablaufdatum) {
     this.ablaufdatum = ablaufdatum;
     return this;
   }
@@ -144,13 +143,12 @@ public class PassType {
    * Get ablaufdatum
    * @return ablaufdatum
   **/
-  @Valid
   @Schema(description = "")
-  public java.time.LocalDateTime getAblaufdatum() {
+  public String getAblaufdatum() {
     return ablaufdatum;
   }
 
-  public void setAblaufdatum(java.time.LocalDateTime ablaufdatum) {
+  public void setAblaufdatum(String ablaufdatum) {
     this.ablaufdatum = ablaufdatum;
   }
 

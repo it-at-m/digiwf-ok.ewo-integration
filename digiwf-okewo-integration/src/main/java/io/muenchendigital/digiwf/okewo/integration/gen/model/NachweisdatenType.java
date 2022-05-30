@@ -27,7 +27,7 @@ import javax.validation.Valid;
 
 public class NachweisdatenType {
   @JsonProperty("datum")
-  private java.time.LocalDateTime datum = null;
+  private String datum = null;
 
   @JsonProperty("aktenzeichen")
   private String aktenzeichen = null;
@@ -35,7 +35,7 @@ public class NachweisdatenType {
   @JsonProperty("behoerde")
   private String behoerde = null;
 
-  public NachweisdatenType datum(java.time.LocalDateTime datum) {
+  public NachweisdatenType datum(String datum) {
     this.datum = datum;
     return this;
   }
@@ -44,13 +44,12 @@ public class NachweisdatenType {
    * Get datum
    * @return datum
   **/
-  @Valid
   @Schema(description = "")
-  public java.time.LocalDateTime getDatum() {
+  public String getDatum() {
     return datum;
   }
 
-  public void setDatum(java.time.LocalDateTime datum) {
+  public void setDatum(String datum) {
     this.datum = datum;
   }
 

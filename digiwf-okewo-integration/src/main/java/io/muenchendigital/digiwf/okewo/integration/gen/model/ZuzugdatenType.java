@@ -27,33 +27,33 @@ import javax.validation.Valid;
 
 public class ZuzugdatenType {
   @JsonProperty("zuzugEu")
-  private java.time.LocalDateTime zuzugEu = null;
+  private String zuzugEu = null;
 
   @JsonProperty("zuzugSamtgemeinde")
-  private java.time.LocalDateTime zuzugSamtgemeinde = null;
+  private String zuzugSamtgemeinde = null;
 
   @JsonProperty("zuzugOrtsteil")
-  private java.time.LocalDateTime zuzugOrtsteil = null;
+  private String zuzugOrtsteil = null;
 
   @JsonProperty("zuzugBund")
-  private java.time.LocalDateTime zuzugBund = null;
+  private String zuzugBund = null;
 
   @JsonProperty("zuzugLand")
-  private java.time.LocalDateTime zuzugLand = null;
+  private String zuzugLand = null;
 
   @JsonProperty("zuzugRegierungsbezirk")
-  private java.time.LocalDateTime zuzugRegierungsbezirk = null;
+  private String zuzugRegierungsbezirk = null;
 
   @JsonProperty("zuzugKreis")
-  private java.time.LocalDateTime zuzugKreis = null;
+  private String zuzugKreis = null;
 
   @JsonProperty("zuzugGemeinde")
-  private java.time.LocalDateTime zuzugGemeinde = null;
+  private String zuzugGemeinde = null;
 
   @JsonProperty("mitHauptwohnungGemeldetSeit")
-  private java.time.LocalDateTime mitHauptwohnungGemeldetSeit = null;
+  private String mitHauptwohnungGemeldetSeit = null;
 
-  public ZuzugdatenType zuzugEu(java.time.LocalDateTime zuzugEu) {
+  public ZuzugdatenType zuzugEu(String zuzugEu) {
     this.zuzugEu = zuzugEu;
     return this;
   }
@@ -62,17 +62,16 @@ public class ZuzugdatenType {
    * Get zuzugEu
    * @return zuzugEu
   **/
-  @Valid
   @Schema(description = "")
-  public java.time.LocalDateTime getZuzugEu() {
+  public String getZuzugEu() {
     return zuzugEu;
   }
 
-  public void setZuzugEu(java.time.LocalDateTime zuzugEu) {
+  public void setZuzugEu(String zuzugEu) {
     this.zuzugEu = zuzugEu;
   }
 
-  public ZuzugdatenType zuzugSamtgemeinde(java.time.LocalDateTime zuzugSamtgemeinde) {
+  public ZuzugdatenType zuzugSamtgemeinde(String zuzugSamtgemeinde) {
     this.zuzugSamtgemeinde = zuzugSamtgemeinde;
     return this;
   }
@@ -81,17 +80,16 @@ public class ZuzugdatenType {
    * Get zuzugSamtgemeinde
    * @return zuzugSamtgemeinde
   **/
-  @Valid
   @Schema(description = "")
-  public java.time.LocalDateTime getZuzugSamtgemeinde() {
+  public String getZuzugSamtgemeinde() {
     return zuzugSamtgemeinde;
   }
 
-  public void setZuzugSamtgemeinde(java.time.LocalDateTime zuzugSamtgemeinde) {
+  public void setZuzugSamtgemeinde(String zuzugSamtgemeinde) {
     this.zuzugSamtgemeinde = zuzugSamtgemeinde;
   }
 
-  public ZuzugdatenType zuzugOrtsteil(java.time.LocalDateTime zuzugOrtsteil) {
+  public ZuzugdatenType zuzugOrtsteil(String zuzugOrtsteil) {
     this.zuzugOrtsteil = zuzugOrtsteil;
     return this;
   }
@@ -100,17 +98,16 @@ public class ZuzugdatenType {
    * Get zuzugOrtsteil
    * @return zuzugOrtsteil
   **/
-  @Valid
   @Schema(description = "")
-  public java.time.LocalDateTime getZuzugOrtsteil() {
+  public String getZuzugOrtsteil() {
     return zuzugOrtsteil;
   }
 
-  public void setZuzugOrtsteil(java.time.LocalDateTime zuzugOrtsteil) {
+  public void setZuzugOrtsteil(String zuzugOrtsteil) {
     this.zuzugOrtsteil = zuzugOrtsteil;
   }
 
-  public ZuzugdatenType zuzugBund(java.time.LocalDateTime zuzugBund) {
+  public ZuzugdatenType zuzugBund(String zuzugBund) {
     this.zuzugBund = zuzugBund;
     return this;
   }
@@ -119,17 +116,16 @@ public class ZuzugdatenType {
    * Get zuzugBund
    * @return zuzugBund
   **/
-  @Valid
   @Schema(description = "")
-  public java.time.LocalDateTime getZuzugBund() {
+  public String getZuzugBund() {
     return zuzugBund;
   }
 
-  public void setZuzugBund(java.time.LocalDateTime zuzugBund) {
+  public void setZuzugBund(String zuzugBund) {
     this.zuzugBund = zuzugBund;
   }
 
-  public ZuzugdatenType zuzugLand(java.time.LocalDateTime zuzugLand) {
+  public ZuzugdatenType zuzugLand(String zuzugLand) {
     this.zuzugLand = zuzugLand;
     return this;
   }
@@ -138,17 +134,16 @@ public class ZuzugdatenType {
    * Get zuzugLand
    * @return zuzugLand
   **/
-  @Valid
   @Schema(description = "")
-  public java.time.LocalDateTime getZuzugLand() {
+  public String getZuzugLand() {
     return zuzugLand;
   }
 
-  public void setZuzugLand(java.time.LocalDateTime zuzugLand) {
+  public void setZuzugLand(String zuzugLand) {
     this.zuzugLand = zuzugLand;
   }
 
-  public ZuzugdatenType zuzugRegierungsbezirk(java.time.LocalDateTime zuzugRegierungsbezirk) {
+  public ZuzugdatenType zuzugRegierungsbezirk(String zuzugRegierungsbezirk) {
     this.zuzugRegierungsbezirk = zuzugRegierungsbezirk;
     return this;
   }
@@ -157,17 +152,16 @@ public class ZuzugdatenType {
    * Get zuzugRegierungsbezirk
    * @return zuzugRegierungsbezirk
   **/
-  @Valid
   @Schema(description = "")
-  public java.time.LocalDateTime getZuzugRegierungsbezirk() {
+  public String getZuzugRegierungsbezirk() {
     return zuzugRegierungsbezirk;
   }
 
-  public void setZuzugRegierungsbezirk(java.time.LocalDateTime zuzugRegierungsbezirk) {
+  public void setZuzugRegierungsbezirk(String zuzugRegierungsbezirk) {
     this.zuzugRegierungsbezirk = zuzugRegierungsbezirk;
   }
 
-  public ZuzugdatenType zuzugKreis(java.time.LocalDateTime zuzugKreis) {
+  public ZuzugdatenType zuzugKreis(String zuzugKreis) {
     this.zuzugKreis = zuzugKreis;
     return this;
   }
@@ -176,17 +170,16 @@ public class ZuzugdatenType {
    * Get zuzugKreis
    * @return zuzugKreis
   **/
-  @Valid
   @Schema(description = "")
-  public java.time.LocalDateTime getZuzugKreis() {
+  public String getZuzugKreis() {
     return zuzugKreis;
   }
 
-  public void setZuzugKreis(java.time.LocalDateTime zuzugKreis) {
+  public void setZuzugKreis(String zuzugKreis) {
     this.zuzugKreis = zuzugKreis;
   }
 
-  public ZuzugdatenType zuzugGemeinde(java.time.LocalDateTime zuzugGemeinde) {
+  public ZuzugdatenType zuzugGemeinde(String zuzugGemeinde) {
     this.zuzugGemeinde = zuzugGemeinde;
     return this;
   }
@@ -195,17 +188,16 @@ public class ZuzugdatenType {
    * Get zuzugGemeinde
    * @return zuzugGemeinde
   **/
-  @Valid
   @Schema(description = "")
-  public java.time.LocalDateTime getZuzugGemeinde() {
+  public String getZuzugGemeinde() {
     return zuzugGemeinde;
   }
 
-  public void setZuzugGemeinde(java.time.LocalDateTime zuzugGemeinde) {
+  public void setZuzugGemeinde(String zuzugGemeinde) {
     this.zuzugGemeinde = zuzugGemeinde;
   }
 
-  public ZuzugdatenType mitHauptwohnungGemeldetSeit(java.time.LocalDateTime mitHauptwohnungGemeldetSeit) {
+  public ZuzugdatenType mitHauptwohnungGemeldetSeit(String mitHauptwohnungGemeldetSeit) {
     this.mitHauptwohnungGemeldetSeit = mitHauptwohnungGemeldetSeit;
     return this;
   }
@@ -214,13 +206,12 @@ public class ZuzugdatenType {
    * Get mitHauptwohnungGemeldetSeit
    * @return mitHauptwohnungGemeldetSeit
   **/
-  @Valid
   @Schema(description = "")
-  public java.time.LocalDateTime getMitHauptwohnungGemeldetSeit() {
+  public String getMitHauptwohnungGemeldetSeit() {
     return mitHauptwohnungGemeldetSeit;
   }
 
-  public void setMitHauptwohnungGemeldetSeit(java.time.LocalDateTime mitHauptwohnungGemeldetSeit) {
+  public void setMitHauptwohnungGemeldetSeit(String mitHauptwohnungGemeldetSeit) {
     this.mitHauptwohnungGemeldetSeit = mitHauptwohnungGemeldetSeit;
   }
 

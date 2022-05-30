@@ -33,7 +33,7 @@ public class TeilbekanntesDatumType {
   private String jahrMonat = null;
 
   @JsonProperty("datum")
-  private java.time.LocalDateTime datum = null;
+  private String datum = null;
 
   public TeilbekanntesDatumType jahr(String jahr) {
     this.jahr = jahr;
@@ -71,7 +71,7 @@ public class TeilbekanntesDatumType {
     this.jahrMonat = jahrMonat;
   }
 
-  public TeilbekanntesDatumType datum(java.time.LocalDateTime datum) {
+  public TeilbekanntesDatumType datum(String datum) {
     this.datum = datum;
     return this;
   }
@@ -80,13 +80,12 @@ public class TeilbekanntesDatumType {
    * Get datum
    * @return datum
   **/
-  @Valid
   @Schema(description = "")
-  public java.time.LocalDateTime getDatum() {
+  public String getDatum() {
     return datum;
   }
 
-  public void setDatum(java.time.LocalDateTime datum) {
+  public void setDatum(String datum) {
     this.datum = datum;
   }
 

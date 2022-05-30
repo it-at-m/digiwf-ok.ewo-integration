@@ -129,8 +129,8 @@
                             </environmentVariables>
 
                             <typeMappings>
-                                <typeMapping>DateTime=java.time.LocalDateTime</typeMapping>
-                                <typeMapping>Date=java.time.LocalDate</typeMapping>
+                                <typeMapping>DateTime=String</typeMapping>
+                                <typeMapping>Date=String</typeMapping>
                             </typeMappings>
 
                             <additionalProperties>

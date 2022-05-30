@@ -31,7 +31,7 @@ public class FruehererFamiliennameType {
   private NachnameType familienname = null;
 
   @JsonProperty("aenderungsdatum")
-  private java.time.LocalDateTime aenderungsdatum = null;
+  private String aenderungsdatum = null;
 
   public FruehererFamiliennameType familienname(NachnameType familienname) {
     this.familienname = familienname;
@@ -52,7 +52,7 @@ public class FruehererFamiliennameType {
     this.familienname = familienname;
   }
 
-  public FruehererFamiliennameType aenderungsdatum(java.time.LocalDateTime aenderungsdatum) {
+  public FruehererFamiliennameType aenderungsdatum(String aenderungsdatum) {
     this.aenderungsdatum = aenderungsdatum;
     return this;
   }
@@ -61,13 +61,12 @@ public class FruehererFamiliennameType {
    * Get aenderungsdatum
    * @return aenderungsdatum
   **/
-  @Valid
   @Schema(description = "")
-  public java.time.LocalDateTime getAenderungsdatum() {
+  public String getAenderungsdatum() {
     return aenderungsdatum;
   }
 
-  public void setAenderungsdatum(java.time.LocalDateTime aenderungsdatum) {
+  public void setAenderungsdatum(String aenderungsdatum) {
     this.aenderungsdatum = aenderungsdatum;
   }
 

@@ -27,12 +27,12 @@ import javax.validation.Valid;
 
 public class SterbedatenType {
   @JsonProperty("datum")
-  private java.time.LocalDateTime datum = null;
+  private String datum = null;
 
   @JsonProperty("ort")
   private String ort = null;
 
-  public SterbedatenType datum(java.time.LocalDateTime datum) {
+  public SterbedatenType datum(String datum) {
     this.datum = datum;
     return this;
   }
@@ -41,13 +41,12 @@ public class SterbedatenType {
    * Get datum
    * @return datum
   **/
-  @Valid
   @Schema(description = "")
-  public java.time.LocalDateTime getDatum() {
+  public String getDatum() {
     return datum;
   }
 
-  public void setDatum(java.time.LocalDateTime datum) {
+  public void setDatum(String datum) {
     this.datum = datum;
   }
 

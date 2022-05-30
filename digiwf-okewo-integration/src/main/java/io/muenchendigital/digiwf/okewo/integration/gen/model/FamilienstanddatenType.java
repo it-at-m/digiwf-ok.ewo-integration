@@ -30,7 +30,7 @@ public class FamilienstanddatenType {
   private String familienstand = null;
 
   @JsonProperty("datum")
-  private java.time.LocalDateTime datum = null;
+  private String datum = null;
 
   public FamilienstanddatenType familienstand(String familienstand) {
     this.familienstand = familienstand;
@@ -50,7 +50,7 @@ public class FamilienstanddatenType {
     this.familienstand = familienstand;
   }
 
-  public FamilienstanddatenType datum(java.time.LocalDateTime datum) {
+  public FamilienstanddatenType datum(String datum) {
     this.datum = datum;
     return this;
   }
@@ -59,13 +59,12 @@ public class FamilienstanddatenType {
    * Get datum
    * @return datum
   **/
-  @Valid
   @Schema(description = "")
-  public java.time.LocalDateTime getDatum() {
+  public String getDatum() {
     return datum;
   }
 
-  public void setDatum(java.time.LocalDateTime datum) {
+  public void setDatum(String datum) {
     this.datum = datum;
   }
 

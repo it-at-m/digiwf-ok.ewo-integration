@@ -21,7 +21,7 @@ spring:
           destination: <topic>
       function:
         routing:
-          enabled: 'true'
+          enabled: true
       kafka:
         binder:
           brokers: <brokerUrl>

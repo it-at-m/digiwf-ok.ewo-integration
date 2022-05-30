@@ -27,7 +27,7 @@ import javax.validation.Valid;
 
 public class WaffenbesitzVerbotType {
   @JsonProperty("angelegtAm")
-  private java.time.LocalDateTime angelegtAm = null;
+  private String angelegtAm = null;
 
   @JsonProperty("behoerde")
   private String behoerde = null;
@@ -35,7 +35,7 @@ public class WaffenbesitzVerbotType {
   @JsonProperty("aktenzeichen")
   private String aktenzeichen = null;
 
-  public WaffenbesitzVerbotType angelegtAm(java.time.LocalDateTime angelegtAm) {
+  public WaffenbesitzVerbotType angelegtAm(String angelegtAm) {
     this.angelegtAm = angelegtAm;
     return this;
   }
@@ -44,13 +44,12 @@ public class WaffenbesitzVerbotType {
    * Get angelegtAm
    * @return angelegtAm
   **/
-  @Valid
   @Schema(description = "")
-  public java.time.LocalDateTime getAngelegtAm() {
+  public String getAngelegtAm() {
     return angelegtAm;
   }
 
-  public void setAngelegtAm(java.time.LocalDateTime angelegtAm) {
+  public void setAngelegtAm(String angelegtAm) {
     this.angelegtAm = angelegtAm;
   }
 

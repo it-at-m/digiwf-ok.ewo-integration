@@ -93,7 +93,7 @@ public class VertreterType {
   private SterbedatenType sterbedaten = null;
 
   @JsonProperty("endeVertretung")
-  private java.time.LocalDateTime endeVertretung = null;
+  private String endeVertretung = null;
 
   @JsonProperty("sperren")
   private List<SperreType> sperren = null;
@@ -236,7 +236,7 @@ public class VertreterType {
     this.sterbedaten = sterbedaten;
   }
 
-  public VertreterType endeVertretung(java.time.LocalDateTime endeVertretung) {
+  public VertreterType endeVertretung(String endeVertretung) {
     this.endeVertretung = endeVertretung;
     return this;
   }
@@ -245,13 +245,12 @@ public class VertreterType {
    * Get endeVertretung
    * @return endeVertretung
   **/
-  @Valid
   @Schema(description = "")
-  public java.time.LocalDateTime getEndeVertretung() {
+  public String getEndeVertretung() {
     return endeVertretung;
   }
 
-  public void setEndeVertretung(java.time.LocalDateTime endeVertretung) {
+  public void setEndeVertretung(String endeVertretung) {
     this.endeVertretung = endeVertretung;
   }
 
