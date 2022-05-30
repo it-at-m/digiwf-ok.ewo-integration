@@ -5,6 +5,7 @@ io:
         password: ''
         url: ''
         username: ''
+        benutzerId: ''
       streaming:
         typeMappings:
           getPerson: getPerson
