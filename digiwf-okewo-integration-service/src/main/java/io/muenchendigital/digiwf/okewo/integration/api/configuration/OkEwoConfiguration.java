@@ -1,5 +1,6 @@
 package io.muenchendigital.digiwf.okewo.integration.api.configuration;
 
+import io.muenchendigital.digiwf.okewo.integration.api.streaming.OkEwoStreamingEventListener;
 import io.muenchendigital.digiwf.spring.cloudstream.utils.api.streaming.infrastructure.RoutingCallback;
 import io.muenchendigital.digiwf.spring.cloudstream.utils.configuration.StreamingConfiguration;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
@@ -23,9 +24,15 @@ public class OkEwoConfiguration {
 
     private static final String HEADER_SEARCH_PERSON_ERWEITERT = "searchPersonErweitert";
 
+    /**
+     * Bean of type {@link RoutingCallback} to register the routes
+     * defined in {@link OkEwoStreamingEventListener} programmatically.
+     *
+     * @return the {@link RoutingCallback} as a bean.
+     */
     @Bean
     @ConditionalOnMissingBean
-    public MessageRoutingCallback myRouter() {
+    public MessageRoutingCallback okEwoRouter() {
         final Map<String, String> typeMappings = new HashMap<>();
         typeMappings.put(HEADER_GET_PERSON, HEADER_GET_PERSON);
         typeMappings.put(HEADER_SEARCH_PERSON, HEADER_SEARCH_PERSON);
