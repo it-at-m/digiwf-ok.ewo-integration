@@ -36,14 +36,17 @@ public class OkEwoPersonErweitertRepository {
             return this.personErweitertApi.deMuenchenEaiEwoRouteROUTEPROCESSGETPERSONERWEITERT(om, benutzerId);
         } catch (final HttpClientErrorException exception) {
             final String message = String.format("The request to get a person failed with %s.", exception.getStatusCode());
+            log.error(exception.getMessage());
             log.error(message);
             throw new OkEwoIntegrationClientErrorException(message, exception);
         } catch (final HttpServerErrorException exception) {
             final String message = String.format("The request to get a person failed with %s.", exception.getStatusCode());
+            log.error(exception.getMessage());
             log.error(message);
             throw new OkEwoIntegrationServerErrorException(message, exception);
         } catch (final RestClientException exception) {
             final String message = String.format("The request to get a person failed.");
+            log.error(exception.getMessage());
             log.error(message);
             throw new OkEwoIntegrationException(message, exception);
         }
@@ -63,14 +66,17 @@ public class OkEwoPersonErweitertRepository {
             return this.personErweitertApi.deMuenchenEaiEwoRouteROUTEPROCESSSEARCHPERSONERWEITERT(suchePersonerweitertAnfrage);
         } catch (final HttpClientErrorException exception) {
             final String message = String.format("The request to search a person failed with %s.", exception.getStatusCode());
+            log.error(exception.getMessage());
             log.error(message);
             throw new OkEwoIntegrationClientErrorException(message, exception);
         } catch (final HttpServerErrorException exception) {
             final String message = String.format("The request to search a person failed with %s.", exception.getStatusCode());
+            log.error(exception.getMessage());
             log.error(message);
             throw new OkEwoIntegrationServerErrorException(message, exception);
         } catch (final RestClientException exception) {
             final String message = String.format("The request to search a person failed.");
+            log.error(exception.getMessage());
             log.error(message);
             throw new OkEwoIntegrationException(message, exception);
         }
