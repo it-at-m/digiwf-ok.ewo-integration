@@ -6,12 +6,6 @@ io:
         url: ''
         username: ''
         benutzerId: ''
-      streaming:
-        typeMappings:
-          getPerson: getPerson
-          getPersonErweitert: getPersonErweitert
-          searchPerson: searchPerson
-          searchPersonErweitert: searchPersonErweitert
 spring:
   cloud:
     function:
@@ -25,6 +19,9 @@ spring:
           destination: <topic>
         sendMessage-out-0:
           destination: <topic>
+      function:
+        routing:
+          enabled: 'true'
       kafka:
         binder:
           brokers: <brokerUrl>
