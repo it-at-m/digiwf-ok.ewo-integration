@@ -67,6 +67,9 @@
         "produces": [
           "application/json;charset=UTF-8"
         ],
+        "consumes": [
+          "application/json"
+        ],
         "parameters": [
           {
             "in": "body",
@@ -132,6 +135,9 @@
         "operationId": "de.muenchen.eai.ewo.route.ROUTE_PROCESSSEARCHPERSONERWEITERT",
         "produces": [
           "application/json;charset=UTF-8"
+        ],
+        "consumes": [
+          "application/json"
         ],
         "parameters": [
           {

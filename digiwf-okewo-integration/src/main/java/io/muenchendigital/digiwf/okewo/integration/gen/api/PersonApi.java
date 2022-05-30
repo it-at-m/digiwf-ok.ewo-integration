@@ -138,7 +138,7 @@ public class PersonApi {
          };
         final List<MediaType> accept = apiClient.selectHeaderAccept(accepts);
         final String[] contentTypes = { 
-            "*/*"
+            "application/json"
          };
         final MediaType contentType = apiClient.selectHeaderContentType(contentTypes);
 
