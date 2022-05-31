@@ -37,4 +37,4 @@ jobs:
         with:
           context: ./digiwf-okewo-integration-service
           push: true
-          tags: itatm/digiwf-okewo-integration-service:${{ steps.extract_branch.outputs.branch }}
+          tags: itatm/digiwf-okewo-integration-service:${GITHUB_REF##*/}
