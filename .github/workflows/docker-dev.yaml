@@ -32,16 +32,13 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_KEY }}
 
-      - name: Branch name
-        run: echo running on branch ${GITHUB_REF_NAME}
-
-      - name: Current Branch
-        id: get-current-branch
-        uses: ryolambert/current-branch@v1.0
+      - name: Get branch name
+        id: branch-name
+        uses: tj-actions/branch-names@v5.2
 
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
           context: ./digiwf-okewo-integration-service
           push: true
-          tags: itatm/digiwf-okewo-integration-service:${{ steps.get-current-branch.outputs.branch }}
+          tags: itatm/digiwf-okewo-integration-service:${{ steps.branch-name.outputs.current_branch }}
