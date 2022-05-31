@@ -90,12 +90,15 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven.surfire.plugin.version}</version>
             </plugin>
+            <!--
             <plugin>
-                <!--
-                    Docs:
-                    https://openapi-generator.tech/docs/generators/java
-                    https://github.com/swagger-api/swagger-codegen/blob/master/modules/swagger-codegen-maven-plugin/README.md#general-configuration-parameters
-                -->
+            -->
+            <!--
+                Docs:
+                https://openapi-generator.tech/docs/generators/java
+                https://github.com/swagger-api/swagger-codegen/blob/master/modules/swagger-codegen-maven-plugin/README.md#general-configuration-parameters
+            -->
+            <!--
                 <groupId>io.swagger.codegen.v3</groupId>
                 <artifactId>swagger-codegen-maven-plugin</artifactId>
                 <version>${swagger.codegen.version}</version>
@@ -148,6 +151,7 @@
                     </execution>
                 </executions>
             </plugin>
+            -->
         </plugins>
     </build>
 
