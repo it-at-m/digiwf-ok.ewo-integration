@@ -33,11 +33,11 @@ jobs:
           password: ${{ secrets.DOCKERHUB_KEY }}
 
       - name: Branch name
-        run: echo running on branch ${GITHUB_REF##*/}
+        run: echo running on branch ${GITHUB_REF_NAME}
 
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
           context: ./digiwf-okewo-integration-service
           push: true
-          tags: itatm/digiwf-okewo-integration-service:${{GITHUB_REF##*/}}
+          tags: itatm/digiwf-okewo-integration-service:${GITHUB_REF_NAME}
