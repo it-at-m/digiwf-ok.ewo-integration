@@ -1,5 +1,4 @@
 FROM registry.access.redhat.com/ubi8/openjdk-11:latest
-# FROM registry.access.redhat.com/ubi8/openjdk-11:latest
 
 EXPOSE 8080
 
@@ -8,5 +7,7 @@ USER root
 RUN mkdir /app
 
 COPY target/*.jar /app/spring-boot-application.jar
+
+USER 185
 
 CMD ["java","-jar","/app/spring-boot-application.jar"]
