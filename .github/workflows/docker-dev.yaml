@@ -36,7 +36,7 @@ jobs:
         run: echo running on branch ${GITHUB_REF_NAME}
 
       - name: Current Branch
-          id: get-current-branch
+        id: get-current-branch
         uses: ryolambert/current-branch@v1.0
 
       - name: Build and push
