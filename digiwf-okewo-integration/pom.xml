@@ -92,13 +92,6 @@
             </plugin>
             <!--
             <plugin>
-            -->
-            <!--
-                Docs:
-                https://openapi-generator.tech/docs/generators/java
-                https://github.com/swagger-api/swagger-codegen/blob/master/modules/swagger-codegen-maven-plugin/README.md#general-configuration-parameters
-            -->
-            <!--
                 <groupId>io.swagger.codegen.v3</groupId>
                 <artifactId>swagger-codegen-maven-plugin</artifactId>
                 <version>${swagger.codegen.version}</version>
