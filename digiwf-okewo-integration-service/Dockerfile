@@ -4,4 +4,4 @@ EXPOSE 8080
 
 COPY target/*.jar /deployments/spring-boot-application.jar
 
-CMD ["java","-jar $JAVA_OPTIONS","/deployments/spring-boot-application.jar"]
+CMD ["java","-jar ${JAVA_OPTIONS}","/deployments/spring-boot-application.jar"]
