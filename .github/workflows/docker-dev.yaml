@@ -33,7 +33,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_KEY }}
 
       - name: Branch name
-        run: echo running on branch ${GITHUB_REF_NAME}
+        run: echo running on branch ${{ env.GITHUB_REF_NAME }}
 
       - name: Build and push
         uses: docker/build-push-action@v2
