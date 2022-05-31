@@ -40,4 +40,4 @@ jobs:
         with:
           context: ./digiwf-okewo-integration-service
           push: true
-          tags: itatm/digiwf-okewo-integration-service:${GITHUB_REF_NAME}
+          tags: itatm/digiwf-okewo-integration-service:${{ env.GITHUB_REF_NAME }}
