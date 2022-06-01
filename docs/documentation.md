@@ -36,6 +36,8 @@ The response is also an JSON object.
 A crucial and mandatory JSON object attribute is `eventType`.
 This attribute is necessary for correct deserialization of the requests JSON payload.
 
+The date and time information within the request and response payload are provided in ISO standard.
+
 ##### getPerson
 
 Gets a Person on the basis of an Ordnungsmerkmal.
