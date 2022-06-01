@@ -8,6 +8,6 @@ public class OkEwoEventDto {
     /**
      * The payload to request OK.EWO.
      */
-    private AbstractRequestDto requestData;
+    private AbstractRequestDto request;
 
 }

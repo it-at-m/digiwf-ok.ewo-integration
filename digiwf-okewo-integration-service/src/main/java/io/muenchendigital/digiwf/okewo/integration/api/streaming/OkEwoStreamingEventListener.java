@@ -48,7 +48,7 @@ public class OkEwoStreamingEventListener {
         return message -> {
             log.debug(message.toString());
 
-            final var ordnungsmerkmal = (OrdnungsmerkmalDto) message.getPayload().getRequestData();
+            final var ordnungsmerkmal = (OrdnungsmerkmalDto) message.getPayload().getRequest();
 
             Object ewoResult;
             try {
@@ -76,7 +76,7 @@ public class OkEwoStreamingEventListener {
         return message -> {
             log.debug(message.toString());
 
-            final var searchPersonRequestDto = (SearchPersonRequestDto) message.getPayload().getRequestData();
+            final var searchPersonRequestDto = (SearchPersonRequestDto) message.getPayload().getRequest();
 
             Object ewoResult;
             try {
@@ -104,7 +104,7 @@ public class OkEwoStreamingEventListener {
         return message -> {
             log.debug(message.toString());
 
-            final var ordnungsmerkmal = (OrdnungsmerkmalDto) message.getPayload().getRequestData();
+            final var ordnungsmerkmal = (OrdnungsmerkmalDto) message.getPayload().getRequest();
 
             Object ewoResult;
             try {
@@ -132,7 +132,7 @@ public class OkEwoStreamingEventListener {
         return message -> {
             log.debug(message.toString());
 
-            final var searchPersonErweitertRequestDto = (SearchPersonErweitertRequestDto) message.getPayload().getRequestData();
+            final var searchPersonErweitertRequestDto = (SearchPersonErweitertRequestDto) message.getPayload().getRequest();
 
             Object ewoResult;
             try {
