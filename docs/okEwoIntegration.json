@@ -1,5 +1,5 @@
 {
-  "name": "DigiWF OK.EWO Integration",
+  "name": "DigiWF OK EWO Integration",
   "id": "de.muenchen.digitalwf.templates.digiwf-okewo-integration",
   "appliesTo": [
     "bpmn:CallActivity"
