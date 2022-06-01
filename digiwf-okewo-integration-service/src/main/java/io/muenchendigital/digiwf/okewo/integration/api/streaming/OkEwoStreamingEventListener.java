@@ -80,7 +80,7 @@ public class OkEwoStreamingEventListener {
 
             Object ewoResult;
             try {
-                ewoResult = this.okEwoPersonService.searchPerson(searchPersonRequestDto.getSuchePersonAnfrage());
+                ewoResult = this.okEwoPersonService.searchPerson(searchPersonRequestDto.getSearchPerson());
             } catch (final Exception exception) {
                 ewoResult = new OkEwoErrorDto(exception.getMessage());
             }
@@ -136,7 +136,7 @@ public class OkEwoStreamingEventListener {
 
             Object ewoResult;
             try {
-                ewoResult = this.okEwoPersonErweitertService.searchPerson(searchPersonErweitertRequestDto.getSuchePersonerweitertAnfrage());
+                ewoResult = this.okEwoPersonErweitertService.searchPerson(searchPersonErweitertRequestDto.getSearchPersonErweitert());
             } catch (final Exception exception) {
                 ewoResult = new OkEwoErrorDto(exception.getMessage());
             }

@@ -10,6 +10,6 @@ import lombok.ToString;
 @EqualsAndHashCode(callSuper = true)
 public class SearchPersonRequestDto extends AbstractRequestDto {
 
-    private SuchePersonAnfrage suchePersonAnfrage;
+    private SuchePersonAnfrage searchPerson;
 
 }
