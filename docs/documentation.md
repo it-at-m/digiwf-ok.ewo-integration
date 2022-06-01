@@ -18,7 +18,16 @@ The requests to OK.EWO are expected by the service over an event bus messages.
 
 #### Service Configuration
 
-tbd
+An example configuration can be found within the properties files.
+
+* `application.yml`: `digiwf-okewo-integration-service/src/main/resources/application.yml`
+* `application-local.yml`: `digiwf-okewo-integration-service/src/main/resources/application.yml`
+
+The file `application.yml` contains the configuration according graceful shutdown, metrics, ports, ...
+
+The file `application-local.yml` provides the event bus and OK.EWO relevant configuration.
+The event bus configuration is implemented
+according [DigiWF Spring Cloudstream Utils](https://github.com/it-at-m/digiwf-spring-cloudstream-utils#getting-started).
 
 #### Service API usage
 
