@@ -31,21 +31,21 @@ according [DigiWF Spring Cloudstream Utils](https://github.com/it-at-m/digiwf-sp
 
 #### Service API usage
 
-The OK.EWO requests are to be made via the element template defined in `okEwoIntegration.json`.
+The OK.EWO requests have to be made via the element template defined in `okEwoIntegration.json`.
 The service and the template are providing four type of requests.
-The request type can be defined via the element template in field `Event Type`.
+The request type can be defined via the element template dropdown in field `Event Type`.
 
 * `getPerson`
 * `searchPerson`
 * `getPersonErweitert`
 * `searchPersonErweitert`
 
-For each request type the payload has to be defined in the element templates request field as a JSON object.
+For each request type, the payload has to be defined in the element templates request field as a JSON object.
 The response is also an JSON object.
-A crucial and mandatory JSON object attribute is `eventType`.
-This attribute is necessary for correct deserialization of the requests JSON payload.
+A crucial and mandatory JSON object attribute for a request is `eventType`.
+This attribute is necessary for correct deserialization of the requests JSON payload within the integration service.
 
-The date and time information within the request and response payload are provided in ISO standard.
+The date and time information within the request and response payloads are provided in ISO standard.
 
 ##### getPerson
 
