@@ -14,8 +14,13 @@ in [quickstart.md](https://github.com/it-at-m/digiwf-ok.ewo-integration#getting-
 
 The service is provided via Dockerhub as
 an [Image](https://hub.docker.com/repository/docker/itatm/digiwf-okewo-integration-service).
+The source code for the service can be found in
+submodule [digiwf-okewo-integration-service](https://github.com/it-at-m/digiwf-ok.ewo-integration/tree/dev/digiwf-okewo-integration-service)
+.
 
 The requests to OK.EWO are expected by the service over an event bus messages.
+To provide the event bus functionality via kafka,
+the [DigiWF Spring Cloudstream Utils](https://github.com/it-at-m/digiwf-spring-cloudstream-utils) are used.
 
 #### Service Configuration
 
