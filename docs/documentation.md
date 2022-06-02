@@ -18,7 +18,7 @@ The source code for the service can be found in
 submodule [digiwf-okewo-integration-service](https://github.com/it-at-m/digiwf-ok.ewo-integration/tree/dev/digiwf-okewo-integration-service)
 .
 
-The requests to OK.EWO are expected by the service over an event bus messages.
+The requests to OK.EWO are expected by the service over kafka event bus messages.
 To provide the event bus functionality via kafka,
 the [DigiWF Spring Cloudstream Utils](https://github.com/it-at-m/digiwf-spring-cloudstream-utils) are used.
 
@@ -38,7 +38,7 @@ according [DigiWF Spring Cloudstream Utils](https://github.com/it-at-m/digiwf-sp
 #### Service API usage
 
 The OK.EWO requests have to be made via the element template defined in `okEwoIntegration.json`.
-The service and the template are providing four type of requests.
+The service and the template are providing four types of requests.
 The request type can be defined via the element template dropdown in field `Event Type`.
 
 * `getPerson`
@@ -57,6 +57,8 @@ The date and time information within the request and response payloads are provi
 
 Gets a Person on the basis of an Ordnungsmerkmal.
 
+The following JSON object shows the example payload set at the element templates request field.
+
 ```yaml
 {
   "eventType": "getPerson",
@@ -67,6 +69,10 @@ Gets a Person on the basis of an Ordnungsmerkmal.
 ##### searchPerson
 
 Searches Persons based on search parameters.
+
+The following JSON object shows the example payload set at the element templates request field.
+The search parameters within JSON object allocated to JSON key `searchPerson` are optional,
+if parameters are not needed, they can be omitted.
 
 ```yaml
 {
@@ -113,6 +119,10 @@ The following JSON object shows the example payload set at the element templates
 ##### searchPersonErweitert
 
 Searches PersonErweitert based on search parameters.
+
+The following JSON object shows the example payload set at the element templates request field.
+The search parameters within JSON object allocated to JSON key `searchPersonErweitert` are optional,
+if parameters are not needed, they can be omitted.
 
 ```yaml
 {
