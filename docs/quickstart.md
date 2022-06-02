@@ -2,9 +2,9 @@
 
 Below is an example of how you can install and set up your service.
 
-1. Use the spring initalizer and create a Spring Boot application with `Spring Web`
+1. Use the spring initializer and create a Spring Boot application with `Spring Web`
    dependencies [https://start.spring.io](https://start.spring.io)
-2. Add the 'digiwf-email-integration-starter' dependency.
+2. Add the `digiwf-okewo-integration-starter` dependency.
 
 With Maven:
 
@@ -34,7 +34,7 @@ io.muenchendigital.digiwf.okewo:
 
 5. Use the repository beans
 
-To request the OK.EWO rest api the methods of the following listed spring beans can be used.
+To request the OK.EWO rest api, the methods of the following listed spring beans can be used.
 
 * `OkEwoPersonRepository`
 * `OkEwoPersonErweitertRepository`
