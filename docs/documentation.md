@@ -7,7 +7,8 @@ and on the other hand the service `digiwf-okewo-integration-service` which is pr
 
 ### Spring-Boot-Starter
 
-tbd
+The usage of the starter is documented
+in [quickstart.md](https://github.com/it-at-m/digiwf-ok.ewo-integration#getting-started).
 
 ### Service provided as an image
 
