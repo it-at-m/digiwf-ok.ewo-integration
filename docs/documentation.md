@@ -10,6 +10,13 @@ and on the other hand the service `digiwf-okewo-integration-service` which is pr
 The usage of the starter is documented
 in [quickstart.md](https://github.com/it-at-m/digiwf-ok.ewo-integration#getting-started).
 
+#### Error handling
+
+The errors occurring during the rest request are divided into three error categories.
+These are client-side errors, server-side errors and errors that cannot be assigned to either the client or the server.
+Each of these three error categories is assigned its own exception, which is then thrown when the methods in the
+repository classes `OkEwoPersonRepository` and `OkEwoPersonErweitertRepository` are called.
+
 ### Service provided as an image
 
 The service is provided via Dockerhub as
