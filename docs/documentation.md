@@ -161,4 +161,13 @@ if parameters are not needed, they can be omitted.
 }
 ```
 
+#### Error handling
 
+If client-side errors, server-side errors or errors that cannot be assigned to either the client or the server occur
+during the rest request within the service, an error response is returned to the caller via the event bus.
+
+```yaml
+{
+  "message": "THE GENERIC ERROR MESSAGE"
+}
+```
