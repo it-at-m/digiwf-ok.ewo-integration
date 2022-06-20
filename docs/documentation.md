@@ -85,9 +85,6 @@ if parameters are not needed, they can be omitted.
 {
   "eventType": "searchPerson",
   "searchPerson": {
-    "benutzer": {
-      "benutzerId": "enim nostrud"
-    },
     "suchkriterien": {
       "datensatzstatus": "AKTUELL",
       "familienname": "veniam elit cupidatat nostrud",
@@ -135,9 +132,6 @@ if parameters are not needed, they can be omitted.
 {
   "eventType": "searchPersonErweitert",
   "searchPersonErweitert": {
-    "benutzer": {
-      "benutzerId": "esse sit laboris aliquip"
-    },
     "suchkriterien": {
       "datensatzstatus": "INAKTUELL",
       "familienname": "dolore ",
