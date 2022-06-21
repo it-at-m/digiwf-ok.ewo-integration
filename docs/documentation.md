@@ -180,6 +180,8 @@ The following JSON object shows the example payload set at the element templates
 The search parameters within JSON object allocated to JSON key `searchPerson` are optional,
 if parameters are not needed, they can be omitted.
 
+A mandatory attribute is `datensatzstatus` with the characteristics `AKTUELL`, `INAKTUELL` or `OHNE_EINSCHRAENKUNG`.
+
 ```json
 {
   "eventType": "searchPerson",
@@ -1102,6 +1104,8 @@ Searches PersonErweitert based on search parameters.
 The following JSON object shows the example payload set at the element templates request field.
 The search parameters within JSON object allocated to JSON key `searchPersonErweitert` are optional,
 if parameters are not needed, they can be omitted.
+
+A mandatory attribute is `datensatzstatus` with the characteristics `AKTUELL`, `INAKTUELL` or `OHNE_EINSCHRAENKUNG`.
 
 ```json
 {
